@@ -1,0 +1,30 @@
+@media (min-width: 992px)
+    .header
+        &-nav
+            &__element
+                position: relative
+                &::after
+                    content: ""
+                    position: absolute
+                    bottom: -4px
+                    right: 0
+                    width: 0
+                    height: 2px
+                    border-radius: 2px
+                    background: $primary
+                    transition: 0.3s
+                &:hover
+                    color: $primary
+                    &::after
+                        width: 100%
+                        left: 0
+        &-profile
+            &:hover
+                border-color: $primary
+                color: $primary
+        &-search
+            &__icon
+                &:hover
+                    border-color: $primary
+                    color: $primary
+
