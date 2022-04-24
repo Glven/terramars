@@ -18,13 +18,17 @@
                     &::after
                         width: 100%
                         left: 0
+            &__searchIcon
+                &:hover
+                    border-color: $primary
+                    color: $primary
         &-profile
-            &:hover
-                border-color: $primary
-                color: $primary
-        &-search
             &__icon
                 &:hover
                     border-color: $primary
                     color: $primary
+@media (max-width: 991px)
+    .header
+        &-nav
+            display: none
 
