@@ -1,12 +1,22 @@
 *
-    text-decoration: none
-    border: none
-    box-sizing: border-box
-h1, h2, h3, h4, h5, h6
-  font-weight: normal
+   box-sizing: border-box
+   text-decoration: none
+   box-shadow: none 
+   border: none
 html
-    font-size: 10px
-    font-family: 'Futura Book', sans-serif
+   font-size: 10px
+body
+   font-family: 'Futura Book', sans-serif
+img
+   width: 100%
+textarea
+   resize: none
+h1, h2, h3, h4, h5, h6
+   font-weight: normal
+.containers
+   transition: 0.3s ease-in-out
+   &_activeHidden
+      transform: translateX(-70%)
 @media (min-width: 576px) 
   .container
     max-width: 540px +102px
@@ -19,4 +29,3 @@ html
 @media (min-width: 1200px) 
   .container
     max-width: 1140px + 102px
-

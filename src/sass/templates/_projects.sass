@@ -1,0 +1,157 @@
+.projects
+   position: relative
+   padding-top: 10rem
+   padding-bottom: 20rem
+.finished
+   &-title
+      margin-bottom: 2rem
+      font-size: 3rem
+      color: $light
+      font-family: 'Yeseva One', cursive
+      letter-spacing: 2px
+      &::after
+         display: inline-block
+         content: ''
+         width: 20%
+         height: 2px
+         margin-left: 10px
+         vertical-align: middle
+         background: $primary
+   &-text
+      max-width: 49.4rem
+      width: 90%
+      margin-bottom: 4rem
+      color: $light
+      font-size: 16px
+      line-height: 20px
+   .swiper
+      &-wrapper
+         margin-bottom: 7rem
+      &-pagination
+         &-bullet
+            background: $light
+         &-active
+            background: $primary
+      &-button
+         &-prev
+            top: 100%
+            width: 42px
+            height: 14px
+            background: url("./../img/prev-btn.svg") no-repeat center
+            background-size: contain
+            &::after
+               display: none
+         &-next
+            top: 100%
+            width: 42px
+            height: 14px
+            background: url("./../img/next-btn.svg") no-repeat center
+            background-size: contain
+            &::after
+               display: none
+      &-slide
+         display: flex
+         flex-wrap: wrap
+         &__info
+            flex-basis: 50%
+            margin-bottom: 1rem 
+         &__title
+            font-family: 'Yeseva One', cursive
+            color: $primary
+            font-size: 16px
+            letter-spacing: 1px
+         &__desc
+            margin: 10px 0
+            color: $light
+            font-size: 16px
+            .meter
+               &::after
+                  display: inline-block
+                  vertical-align: top
+                  content: '2'
+                  font-size: 12px
+   &-img
+      display: flex
+      align-items: center
+      justify-content: center
+      max-width: 70rem
+      width: 90%
+      max-height: 50rem
+      border-radius: 10px
+      overflow: hidden
+      img
+         max-height: 50rem
+         height: 50rem
+         border-radius: 10px
+         transition: 0.3s
+      &:hover
+         img
+            transform: scale(1.1)
+.type
+   &-wrapper
+      position: absolute
+      width: 100%
+      top: 100%
+      z-index: 3
+      left: 0
+      transform: translateY(-50%)
+   &-title
+      &__icon
+         background: url("./../img/project.svg") no-repeat center
+         background-size: contain
+   &-card
+      position: relative
+      display: flex
+      flex-direction: column
+      align-items: center
+      cursor: default
+      &__img
+         max-width: 39.2rem
+         width: 90%
+         height: 300px
+         overflow: hidden
+         border-radius: 5px
+         img
+            transition: 0.3s ease-out
+            height: 300px
+      &__info
+         position: absolute
+         top: 100%
+         left: 50%
+         width: 80%
+         background: $main
+         color: $light
+         padding: 3rem 2rem
+         transform: translate(-50%, -50px)
+      &__title
+         position: relative
+         display: inline-block
+         margin-bottom: 1.5rem
+         font-family: 'Yeseva One', cursive
+         font-size: 2rem
+         transition: 0.3s ease-out
+         &::after
+            position: absolute
+            right: 0
+            bottom: -3px
+            display: block
+            content: ''
+            width: 0
+            height: 2px
+            background: $primary
+            transition: 0.3s ease-out
+      &__list
+         li
+            margin-top: 15px
+            font-family: 'Futura Demi', sans-serif
+            font-size: 14px
+      &:hover
+         img
+            transform: scale(1.2)
+         .type
+            &-card
+               &__title
+                  color: $primary
+                  &::after
+                     width: 100%
+                     left: 0

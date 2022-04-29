@@ -1,31 +1,141 @@
-$primary: #ea003d
+$primary: #EA003D
 $light: #fff
-$main: #100e19
-
-.text
-    font-size: 2rem
-.light
-    color: $light
-.primary
-    color: $primary
-.center
-    text-align: center
+$main: #100E19
+.section
+   transition: 0.3s ease-in-out
 .btn
-    display: flex
-    align-items: center
-    justify-content: center
-    font-size: 16px
-    font-family: 'Futura Demi', sans-serif
-    border-radius: 5px
-    letter-spacing: 1px
-    width: 190px
-    height: 40px
-    transition: 0.3s
-    &-primary
-        border: 2px solid $primary
-        background: $primary
-        color: $light
-    &-tran
-        border: 2px solid $primary
-        background: transparent
-        color: $primary
+   display: flex
+   align-items: center
+   justify-content: center
+   width: 190px
+   height: 40px
+   font-family: 'Futura Demi', sans-serif
+   font-size: 16px
+   border-radius: 2px
+   border: 2px solid #000
+   transition: 0.3s
+   cursor: pointer
+   &:hover
+      transform: scale(1.1)
+   &-primary
+      background: $primary
+      color: $light
+      border-color: $primary
+   &-tran
+      background: transparent
+      border-color: $primary
+      color: $primary
+      &:hover
+         background: $primary
+         color: $light
+.section
+   &--dark
+      background: $main
+   &-title
+      display: flex
+      flex-direction: column
+      align-items: center
+      &__text
+         margin-bottom: 10px
+         font-family: 'Yeseva One', cursive
+         font-size: 20px
+      &__icon
+         position: relative
+         display: block
+         width: 40px
+         height: 40px
+         &::before
+            position: absolute
+            top: 50%
+            right: 100%
+            content: ''
+            width: 40px
+            height: 2px
+            margin-left: 3rem
+            background: $primary
+            transform: translate(-15px, -1px)
+         &::after
+            position: absolute
+            top: 50%
+            left: 100%
+            content: ''
+            width: 40px
+            height: 2px
+            margin-right: 3rem
+            background: $primary
+            transform: translate(15px, -1px)
+.text
+   &--light
+      color: $light
+   &--dark
+      color: $main
+   &--primary
+      color: $primary
+   &--center
+      text-align: center
+.input, .textarea
+   &-primary
+      border-radius: 5px
+      border: 2px solid $light
+      background: transparent
+      font-size: 14px
+      color: $main
+      transition: 0.2s ease-in-out
+      &::placeholder
+         font-family: 'Futura Demi', sans-serif
+         font-size: 16px
+         letter-spacing: 1px
+         color: $light
+      &:focus
+         border-color: $primary
+         background: $light
+         &::placeholder
+            color: $main
+.up
+   position: fixed
+   z-index: 300
+   display: flex
+   align-items: center
+   justify-content: center
+   width: 60px
+   height: 60px
+   border-radius: 50px
+   bottom: -10%
+   right: 2%
+   background: rgba(255, 255, 255, 0.2)
+   color: $main
+   font-size: 2.5rem
+   cursor: pointer
+   transition: all 0.3s ease-out
+   &:hover
+      box-shadow: 0 0 5px $light, 0 0 15px $light, 0 0 30px $light
+      background: $main
+      color: $light
+   &_active
+      bottom: 2%
+.progressbar
+   position: fixed
+   z-index: 300
+   top: 0
+   left: 0
+   width: 5%
+   height: 100%
+   &-nav
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      height: 100%
+      &__element
+         display: block
+         width: 1.2rem
+         height: 1.2rem
+         margin: 1rem 0
+         border-radius: 50%
+         background: rgba(255, 255, 255, 0.1)
+         transition: all 0.3s ease-in-out
+         &_active
+            background: $primary
+            transform: scale(1.2)
+         &:hover
+            background: $light
