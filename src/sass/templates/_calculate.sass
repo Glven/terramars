@@ -1,0 +1,123 @@
+.calculate
+   padding: 12rem 0
+   &-ranger
+      &__title
+         margin-bottom: 4rem
+         font-family: 'Yeseva One', cursive
+         font-size: 2rem
+         color: $light
+         letter-spacing: 1px
+         span
+            color: $primary
+            &::before
+               display: inline-block
+               vertical-align: top
+               color: $light
+               content: '$'
+               font-size: 12px
+      &__value
+         margin-top: 4rem
+   &-square
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      margin-top: 4rem
+      &__title
+         margin-bottom: 2rem
+         font-size: 2rem
+         flex-basis: 100%
+         color: $light
+         letter-spacing: 1px
+         font-family: 'Yeseva One', cursive
+      &__value
+         margin-right: 10px
+         padding: 10px 0
+         text-align: center
+         font-family: 'Futura Demi', sans-serif
+         font-size: 16px
+         color: $primary
+         background: transparent
+         border-radius: 10px
+         border: 2px solid $primary
+      span
+         font-size: 2.2rem
+         text-transform: uppercase
+         font-family: 'Futura Demi', sans-serif
+         color: $light
+         &::after
+            display: inline-block
+            margin-left: 2px
+            vertical-align: top
+            content: '2'
+            font-size: 14px
+            color: $primary
+   &-title
+      margin-top: 4rem
+      margin-bottom: 1rem
+      font-size: 2.4rem
+      font-family: 'Yeseva One', cursive
+      letter-spacing: 2px
+      color: $light
+   &-subtitle
+      margin-bottom: 2rem
+      font-family: 'Yeseva One', cursive
+      color: $light
+      font-size: 12px
+   &-services
+      display: flex
+      flex-wrap: wrap
+      &__wrap
+         display: flex
+         align-items: center
+         flex-wrap: wrap
+         margin-right: 2rem
+         margin-bottom: 2rem
+         .hidden
+            width: 0
+            visibility: hidden
+         label
+            margin-left: 10px
+            cursor: pointer
+            font-family: 'Futura Demi', sans-serif
+            font-size: 16px
+            color: $light
+            span
+               font-family: 'Yeseva One', cursive
+               font-size: 18px
+               &::after
+                  display: inline-block
+                  vertical-align: top
+                  content: '$'
+                  font-size: 12px
+                  color: $primary
+   &-total
+      margin-top: 4rem
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      &__title
+         margin-right: 1rem
+         font-size: 2.4rem
+         letter-spacing: 2px
+         color: $light
+         font-family: 'Yeseva One', cursive
+      &__value
+         margin-right: 2px
+         padding: 10px
+         background: transparent
+         text-align: center
+         border: 2px solid $primary
+         border-radius: 10px
+         font-family: 'Futura Demi', sans-serif
+         font-size: 16px
+         color: $primary
+      span
+         font-size: 3rem
+         color: $primary
+   &-buttons
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-top: 6rem
+      &__fav
+         margin-right: 4rem

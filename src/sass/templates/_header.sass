@@ -258,3 +258,39 @@
                font-size: 14px
          &-profile
             min-height: 8rem
+.hiddenmenu
+   position: fixed
+   top: 0
+   right: 0
+   display: flex
+   flex-direction: column
+   align-items: center
+   width: 70%
+   height: 100vh
+   padding: 3rem 0
+   background: $main
+   z-index: 300
+   transform: translateX(100%)
+   transition: all 0.3s ease-in-out
+   &-title
+      font-size: 2rem
+      font-family: 'Yeseva One', cursive
+      color: $light
+      letter-spacing: 2px
+   &-nav
+      display: flex
+      flex-direction: column
+      align-items: center
+      width: 80%
+      margin-top: 2rem
+      &__link
+         width: 100%
+         margin-top: 2rem
+         padding-bottom: 2rem
+         text-transform: uppercase
+         text-align: center
+         color: $light
+         font-size: 14px
+         border-bottom: 1px solid $primary
+   &_active
+      transform: translateX(0)

@@ -121,6 +121,7 @@ $(document).ready(function () {
    $('.header-hiddenmenu__btn').click(function(e){
       e.preventDefault();
       $(this).toggleClass('header-hiddenmenu__btn_active');
+      $('.hiddenmenu').toggleClass('hiddenmenu_active');
       containers.toggleClass('containers_activeHidden');
       if($('.up').hasClass('up_active') && $('.header-hiddenmenu__btn').hasClass('header-hiddenmenu__btn_active')){
          $('.up').removeClass('up_active');
@@ -152,25 +153,7 @@ $(document).ready(function () {
       }
    });
 
-   // настройка слайдера
-   var swiper = new Swiper('.swiper', {
-      // Optional parameters
-      loop: true,
-
-      pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-      },
-
-      navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-      },
-  });
-
   // доп линия
-  $('.after-team').css({'height': `${team * 2.5}px`});
-
-  
+  $('.after-team').css({'height': `${team * 2.5}px`});  
   
 });
