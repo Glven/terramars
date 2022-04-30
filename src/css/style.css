@@ -1649,6 +1649,299 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 4rem;
 }
 
+.log {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #f2f2f2;
+}
+.log-main {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  background: #fff;
+}
+.log-main span {
+  color: #100E19;
+  font-family: "Futura Demi", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.log-main span::before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 3px solid #100E19;
+  border-left: 3px solid #100E19;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+.log-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 40rem;
+  width: 100%;
+  padding: 3rem 0;
+  background: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 2px #100E19;
+  box-shadow: 0 0 2px #100E19;
+}
+.log-title {
+  margin-bottom: 2rem;
+  color: #100E19;
+  font-family: "Yeseva One", cursive;
+  font-size: 2rem;
+}
+.log-form {
+  width: 80%;
+}
+.log-form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.log-form .form-group label {
+  margin-bottom: 5px;
+  font-family: "Futura Demi", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.log-form .form-group input {
+  width: 90%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #EA003D;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.log-form .form-group input::-webkit-input-placeholder {
+  font-family: "Futura Demi", sans-serif;
+  font-size: 16px;
+  color: #100E19;
+}
+.log-form .form-group input::-moz-placeholder {
+  font-family: "Futura Demi", sans-serif;
+  font-size: 16px;
+  color: #100E19;
+}
+.log-form .form-group input:-ms-input-placeholder {
+  font-family: "Futura Demi", sans-serif;
+  font-size: 16px;
+  color: #100E19;
+}
+.log-form .form-group input::-ms-input-placeholder {
+  font-family: "Futura Demi", sans-serif;
+  font-size: 16px;
+  color: #100E19;
+}
+.log-form .form-group input::placeholder {
+  font-family: "Futura Demi", sans-serif;
+  font-size: 16px;
+  color: #100E19;
+}
+.log-form .form-btn {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.log-form__btn {
+  background: #2da44e;
+  border-radius: 20px;
+  border: 2px solid #2da44e;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+body {
+  position: relative;
+  background: #f2f2f2;
+}
+
+.main {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  background: #fff;
+}
+.main span {
+  color: #100E19;
+  font-family: "Futura Demi", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.main span::before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 3px solid #100E19;
+  border-left: 3px solid #100E19;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.reg-title {
+  max-width: 50rem;
+  width: 100%;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding-top: 2rem;
+  text-align: center;
+  color: #100E19;
+  font-family: "Yeseva One", cursive;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  background: #fff;
+}
+.reg-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 50rem;
+  width: 100%;
+  margin-left: 50%;
+  padding: 5rem 0;
+  background: #fff;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.reg-form label {
+  margin-bottom: 5px;
+  color: #100E19;
+  font-size: 16px;
+  font-family: "Futura Demi", sans-serif;
+}
+.reg-form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.reg-form .form-group input {
+  padding: 10px;
+  border: 2px solid #f2f2f2;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px #100E19;
+  box-shadow: 0 0 5px #100E19;
+  font-size: 14px;
+  font-family: "Futura Book", sans-serif;
+}
+.reg-form .form-sex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.reg-form .form-sex__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.reg-form__btn {
+  margin-top: 4rem;
+  border-radius: 20px;
+  background: #06bdef;
+  border: 2px solid #06bdef;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.toSave {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  -webkit-transform: translateX(20%);
+  -ms-transform: translateX(20%);
+  transform: translateX(20%);
+  opacity: 0;
+}
+.toSave input {
+  width: 0;
+}
+
 .footer {
   padding: 2rem 0;
   -webkit-transition: 0.3s ease-in-out;
