@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+   @await Html.PartialAsync("MetatagsPartial")
+   @await Html.PartialAsync("CssPartial")
+</head>
+<body>
+    @RenderBody()
+   <div class="hiddenmenu">
+      <h2 class="hiddenmenu-title">Меню</h2>
+      <div class="hiddenmenu-nav">
+         <a href="#hero" class="hiddenmenu-nav__link">Главная</a>
+         <a href="#" class="hiddenmenu-nav__link">Каталог</a>
+         <a href="#" class="hiddenmenu-nav__link">Акции</a>
+         <a href="#" class="hiddenmenu-nav__link">Новости</a>
+         <a href="#" class="hiddenmenu-nav__link">Отзывы</a>
+         <a href="#" class="hiddenmenu-nav__link">Контакты</a>
+      </div>
+   </div>
+   
+   <header class="header">
+      <div class="container">
+         <div class="header-wrapper">
+            <div class="row align-items-center justify-content-between">
+               <div class="col-3 col-lg-2">
+                  <a href="index.html" class="header-logo"></a>
+               </div>
+
+               <div class="col-1 col-lg-9">
+                  <div class="header-nav">
+                     <div class="header-menu">
+                        <a href="#hero" class="header-menu__link">Главная</a>
+                        <a href="#" class="header-menu__link">Каталог</a>
+                        <a href="#" class="header-menu__link">Акции</a>
+                        <a href="#" class="header-menu__link">Новости</a>
+                        <a href="#" class="header-menu__link">Отзывы</a>
+                        <a href="#contact" class="header-menu__link">Контакты</a>
+                     </div>
+                     <!-- /.header-menu -->
+                     <div class="header-search">
+                        <form action="search" class="header-search__form">
+                           <input type="search" placeholder="Искать...">
+                           <button type="submit">
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                           </button>
+                        </form>
+                        <div class="header-search__icon">
+                           <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                     </div>
+                     <!-- /.header-search -->
+                  </div>
+               </div>
+
+               <div class="col-6 col-lg-1">
+                  <div class="header-profile">
+                     <div class="header-profile__icon">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                     </div>
+                     <div class="header-drop">
+                        <a href="#" class="header-drop__btn header-drop__card">
+                           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                           Корзина
+                        </a>
+                        <a href="#" class="header-drop__btn header-drop__fav">
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           Избранное
+                        </a>
+                        <div class="header-drop__buttons">
+                           <a href="log.html" class="btn header-drop__log">Вход</a>
+                           <a href="reg.html" class="btn header-drop__reg">Регистрация</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="header-hiddenmenu">
+                     <div class="header-hiddenmenu__btn">
+                        <span></span>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+            <!-- /.row -->
+         </div>
+         <!-- /.header-wrapper -->
+      </div>
+      <!-- /.container -->
+   </header>
+   <!-- /.header -->
+
+   <section class="section hero" id="hero">
+      <div class="hero-scene">
+         <div data-speed="20" class="hero-layer hero-layer-bg"></div>
+         <div data-speed="70" class="hero-layer hero-layer-1"></div>
+      </div>
+      <div class="container">
+         <div class="hero-wrapper">
+            <h1 class="hero-title">Земельный участок <br>на <span>Марсе</span></h1>
+            <p class="hero-text">Выберите и приобритите под ключ свой участок на красной планете с экономией до 20% в течении 45 дней за счет недавного открытия нашей фирмы</p>
+            <div class="hero-buttons">
+               <button class="btn btn-tran hero-buttons__send">Отправить заявку</button>
+               <a href="calculate.html" class="btn btn-primary hero-buttons__calc">Рассчитать стоимость</a>
+            </div>
+         </div>
+         <!-- /.hero-wrapperc -->
+      </div>
+      <!-- /.container -->
+   </section>
+   <!-- /.section hero -->
+
+   <section class="section projects section--dark" id="projects">
+      <div class="finished">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-lg-6">
+                  <h2 class="finished-title">Завершенные <br> проекты</h2>
+                  <p class="finished-text">В данном слайде представлена лишь малая часть всех завершенных проектов. Нашими услугами воспользовались уже более 1000 людей с различными потребности</p>
+                  <!-- Slider main container -->
+                  <div class="swiper">
+                     <!-- Additional required wrapper -->
+                     <div class="swiper-wrapper swiper-no-swiping">
+                     <!-- Slides -->
+                     <div class="swiper-slide">
+                        <div class="swiper-slide__info">
+                          <h3 class="swiper-slide__title">Координаты</h3>
+                          <p class="swiper-slide__desc">45,55656 65,235</p>
+                        </div>
+                        <div class="swiper-slide__info">
+                          <h3 class="swiper-slide__title">Площадь</h3>
+                          <p class="swiper-slide__desc">81<span class="meter">м</span> </p>
+                        </div>
+                        <div class="swiper-slide__info">
+                          <h3 class="swiper-slide__title">Срок покупки</h3>
+                          <p class="swiper-slide__desc"><span class="swiper-slide__year">5</span> лет</p>
+                        </div>
+                        <div class="swiper-slide__info">
+                          <h3 class="swiper-slide__title">Стоимость</h3>
+                          <p class="swiper-slide__desc"><span class="swiper-slide__cost">1000000</span>$</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Координаты</h3>
+                           <p class="swiper-slide__desc">45,55656 65,235</p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Площадь</h3>
+                           <p class="swiper-slide__desc">81<span class="meter">м</span> </p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Срок покупки</h3>
+                           <p class="swiper-slide__desc"><span class="swiper-slide__year">5</span> лет</p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Стоимость</h3>
+                           <p class="swiper-slide__desc"><span class="swiper-slide__cost">1000000</span>$</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Координаты</h3>
+                           <p class="swiper-slide__desc">45,55656 65,235</p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Площадь</h3>
+                           <p class="swiper-slide__desc">81<span class="meter">м</span> </p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Срок покупки</h3>
+                           <p class="swiper-slide__desc"><span class="swiper-slide__year">5</span> лет</p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Стоимость</h3>
+                           <p class="swiper-slide__desc"><span class="swiper-slide__cost">1000000</span>$</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Координаты</h3>
+                           <p class="swiper-slide__desc">45,55656 65,235</p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Площадь</h3>
+                           <p class="swiper-slide__desc">81<span class="meter">м</span> </p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Срок покупки</h3>
+                           <p class="swiper-slide__desc"><span class="swiper-slide__year">5</span> лет</p>
+                        </div>
+                        <div class="swiper-slide__info">
+                           <h3 class="swiper-slide__title">Стоимость</h3>
+                           <p class="swiper-slide__desc"><span class="swiper-slide__cost">1000000</span>$</p>
+                        </div>
+                        </div>
+                     </div>
+                     <!-- If we need pagination -->
+                     <div class="swiper-pagination"></div>
+      
+                     <!-- If we need navigation buttons -->
+                     <div class="swiper-button-prev"></div>
+                     <div class="swiper-button-next"></div>
+      
+                  </div>
+               </div>
+               <!-- /.col-12 col-lg-6 -->
+               <div class="col-12 col-lg-6">
+                  <div class="swiper">
+                     <!-- Additional required wrapper -->
+                     <div class="swiper-wrapper swiper-no-swiping">
+                       <!-- Slides -->
+                       <div class="swiper-slide">
+                         <div class="finished-img"><img src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG" alt="img"></div>
+                       </div>
+                       <div class="swiper-slide">
+                         <div class="finished-img"><img src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/rcam/RLB_486265291EDR_F0481570RHAZ00323M_.JPG" alt="img"></div>
+                       </div>
+                       <div class="swiper-slide">
+                         <div class="finished-img"><img src="http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR0044631130503673E01_DXXX.jpg" alt="img"></div>
+                       </div>
+                       <div class="swiper-slide">
+                         <div class="finished-img"><img src="http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000ML0044631250305222E03_DXXX.jpg" alt="img"></div>
+                       </div>
+                     </div>
+                   </div>
+               </div>
+               <!-- /.col-12 col-lg-6 -->
+            </div>
+            <!-- /.row -->
+         </div>
+         <!-- /.container -->
+      </div>
+      <!-- /finished -->
+      <div class="type">
+         <div class="container">
+            <div class="section-title type-title">
+               <h2 class="section-title__text type-title__text text--light">Виды проектов</h2>
+               <!-- /.section-title__text type-title__text -->
+               <span class="section-title__icon type-title__icon"></span>
+               <!-- /.section-title__icon type-title__icon -->
+            </div>
+            <!-- /.section-title type-title -->
+            <div class="type-wrapper">
+               <div class="container">
+                  <div class="row justify-content-center">
+                     <div class="col-12 col-md-6 col-lg-4">
+                        <div class="type-card">
+                           <div class="type-card__img"><img src="img/min.jpg" alt="min"></div>
+                           <div class="type-card__info">
+                              <h2 class="type-card__title">Минимальный</h2>
+                              <ul class="type-card__list">
+                                 <li>Покупка участка</li>
+                                 <li>Одна дополнительная услуга на выбор</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- /.col-12 col-md-6 col-lg-4 -->
+                     <div class="col-12 col-md-6 col-lg-4">
+                        <div class="type-card">
+                           <div class="type-card__img"><img src="img/standard.jpg" alt="standard"></div>
+                           <div class="type-card__info">
+                              <h2 class="type-card__title">Стандартный</h2>
+                              <ul class="type-card__list">
+                                 <li>Покупка участка</li>
+                                 <li>Кэшбек 5%</li>
+                                 <li>Выдача специального сертификата</li>
+                                 <li>Три дополнительных услуги на выбор</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- /.col-12 col-md-6 col-lg-4 -->
+                     <div class="col-12 col-md-6 col-lg-4">
+                        <div class="type-card">
+                           <div class="type-card__img"><img src="img/full.jpg" alt="full"></div>
+                           <div class="type-card__info">
+                              <h2 class="type-card__title">Полный</h2>
+                              <ul class="type-card__list">
+                                 <li>Покупка участка</li>
+                                 <li>Кэшбек 10%</li>
+                                 <li>Выдача специального сертификата</li>
+                                 <li>Пожизненное обслуживание</li>
+                                 <li>Установка онлайн контроля</li>
+                                 <li>Неограниченное количество дополнительных услуг на выбор</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- /.col-12 col-md-6 col-lg-4 -->
+                  </div>
+                  <!-- /.row justify-content-center -->
+               </div>
+               <!-- /.container -->
+            </div>
+            <!-- /.type-wrapper -->
+         </div>
+         <!-- /.container -->
+      </div>
+      <!-- /.type -->
+   </section>
+   <!-- /.section project section--dark -->
+
+   <section class="section section--dark team" id="team">
+      <div class="container">
+         <div class="section-title team-title">
+            <h2 class="section-title__text team-title__text text--light">Наша команда</h2>
+            <span class="section-title__icon team-title__icon"></span>
+         </div>
+         <p class="team-description text--light">Каждый сотрудник нашей компании является квалифицированным штатным специалистом с опытом работы от 6 лет. У нас нет шарлатанов, каждый сотрудник выполняет работу, соответствующую его специальности.</p>
+         <div class="team-wrapper">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12 col-md-6 col-lg-3">
+                     <div class="team-card">
+                        <div class="team-card__img">
+                           <img src="img/director.jpg" alt="director">
+                        </div>
+                        <div class="team-card__info">
+                           <h2 class="team-card__name">Billy Herrington</h2>
+                           <span class="team-card__post">Директор</span>
+                           <span class="team-card__exp">Опыт работы <br> 15 лет</span>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- /.col-12 col-md-6 col-lg-3 -->
+                  <div class="col-12 col-md-6 col-lg-3">
+                     <div class="team-card">
+                        <div class="team-card__img">
+                           <img src="img/mainproj.jpg" alt="mainproj">
+                        </div>
+                        <div class="team-card__info">
+                           <h2 class="team-card__name">Elon Musk</h2>
+                           <span class="team-card__post">Главный проектировщик</span>
+                           <span class="team-card__exp">Опыт работы <br> 12 лет</span>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- /.col-12 col-md-6 col-lg-3 -->
+                  <div class="col-12 col-md-6 col-lg-3">
+                     <div class="team-card">
+                        <div class="team-card__img">
+                           <img src="img/pr.jpg" alt="pr">
+                        </div>
+                        <div class="team-card__info">
+                           <h2 class="team-card__name">Luxury Girl</h2>
+                           <span class="team-card__post">PR-менеджер</span>
+                           <span class="team-card__exp">Опыт работы <br> 5 лет</span>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- /.col-12 col-md-6 col-lg-3 -->
+                  <div class="col-12 col-md-6 col-lg-3">
+                     <div class="team-card">
+                        <div class="team-card__img">
+                           <img src="img/anal1.jpg" alt="anal">
+                        </div>
+                        <div class="team-card__info">
+                           <h2 class="team-card__name">Pedro Alonso</h2>
+                           <span class="team-card__post">Аналитик</span>
+                           <span class="team-card__exp">Опыт работы <br> 24 года</span>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- /.col-12 col-md-6 col-lg-3 -->
+               </div>
+               <!-- /.row -->
+            </div>
+            <!-- /.container -->
+         </div>
+         <!-- /.team-wrapper -->
+      </div>
+      <!-- /.container -->
+   </section>
+   <!-- /.section team -->  
+   <section class="section after-team section--dark" id="questions"></section>
+   <section class="section contact" id="contact">
+      <div class="container">
+         <div class="contact-formContainer">
+            <h2 class="contact-formContainer__title text--light">Остались вопросы?</h2>
+            <form action="POST" class="contact-form">
+               <div class="row">
+                  <div class="col-12 col-lg-6">
+                     <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" class="input input-primary" placeholder="Введите имя *" required>
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                     <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="number" id="phone" class="input input-primary" placeholder="Введите телефон *" required>
+                     </div>
+                  </div>
+                  <div class="col-12">
+                     <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea name="message" id="message" placeholder="Введите интересующий вас вопрос" class="textarea textarea-primary"></textarea>
+                     </div>
+                  </div>
+               </div>
+               <div class="contact-form__btn">
+                  <input type="submit" value="Отправить" class="btn btn-primary">
+               </div>
+            </form>
+            <!-- /.contact-form -->
+         </div>
+         <div class="section-title contact-title">
+            <h2 class="section-title__text contact-title__text text--center text--primary">
+               Москва, космический центр Stankin <br> Прямой телефон +7 (929) 997-97-94
+            </h2>
+         </div>
+         <div class="contact-map">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acb9f9811959c2ce64a641922c96f0cbf35064002c813c65362e227c4403347dd&amp;width=100%25&amp;height=465&amp;lang=ru_RU&amp;scroll=false"></script>
+         </div>
+      </div>
+      <!-- /.container -->
+   </section>
+   <!-- /.section contact section--dark -->
+
+   <footer class="footer section--dark">
+      <div class="container">
+         <div class="footer-nav">
+            <div class="footer-nav__col">
+               <a href="https://vk.com" class="footer-nav__link footer-nav__link--vk">
+                  <i class="fa fa-vk" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://instagram.com" class="footer-nav__link footer-nav__link--inst">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://facebook.com" class="footer-nav__link footer-nav__link--fb">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://web.telegram.org" class="footer-nav__link footer-nav__link--tg">
+                  <i class="fa fa-telegram" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://web.whatsapp.com" class="footer-nav__link footer-nav__link--what">
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://twitter.com" class="footer-nav__link footer-nav__link--tw">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+      <!-- /.container -->
+   </footer>
+   <!-- /.footer section--dark -->
+
+   <div class="modal">
+      <div class="modal-container">
+         <div class="modal-container__close"><span></span></div>
+         <!-- /.modal-container__close -->
+         <h2 class="modal-container__title">Свяжитесь с нами</h2>
+         <!-- /.modal-container__title -->
+         <form action="POST" class="modal-container__form">
+            <div class="form-group">
+               <label for="name">Имя</label>
+               <input type="text" id="name" class="input input-primary" placeholder="Введите имя *" required>
+            </div>
+            <div class="form-group">
+               <label for="phone">Телефон</label>
+               <input type="number" id="phone" class="input input-primary" placeholder="Введите телефон *" required>
+            </div>
+            <div class="form-group">
+               <label for="email">Почта</label>
+               <input type="email" id="email" class="input input-primary" placeholder="Введите почту *" required>
+            </div>
+            <div class="form-group">
+               <label for="message">Сообщение</label>
+               <textarea name="message" id="message" class="textarea textarea-primary" placeholder="Введите дополнительную информацию"></textarea>
+            </div>
+            <div class="form-policy">
+               <input type="checkbox" id="policy" required>
+               <label for="policy">Даю согласие на обработку личных данных</label>
+            </div>
+            <div class="modal-container__btn">
+               <input type="submit" value="Отправить" class="btn btn-primary">
+            </div>
+         </form>
+         <!-- /.modal-container__form -->
+      </div>
+      <!-- /.modal-container -->
+   </div>
+   <!-- /.modal -->
+
+   <div class="progressbar">
+      <div class="progressbar-nav">
+         <a href="#hero" class="progressbar-nav__element"></a>
+         <a href="#projects" class="progressbar-nav__element"></a>
+         <a href="#team" class="progressbar-nav__element"></a>
+         <a href="#questions" class="progressbar-nav__element"></a>
+         <a href="#contact" class="progressbar-nav__element"></a>
+      </div>
+   </div>
+
+   <a href="#hero" class="up">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+   </a>
+
+   @await Html.PartialAsync("ScriptsPartial")
+</body>
+</html>
