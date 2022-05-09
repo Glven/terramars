@@ -1307,6 +1307,20 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(-50%, -50%);
   z-index: 3;
 }
+.team-more {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: -45%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.team-more:hover {
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+  -ms-transform: translate(-50%, -50%) scale(1.2);
+  transform: translate(-50%, -50%) scale(1.2);
+}
 .team-card {
   position: relative;
 }
@@ -2193,6 +2207,15 @@ body {
     color: #fff;
   }
 
+  .team-more {
+    top: 80%;
+  }
+  .team-more:hover {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
+
   .after-team {
     display: none;
   }
@@ -2346,7 +2369,7 @@ body {
 
   .team {
     padding-top: 8rem;
-    padding-bottom: 25rem;
+    padding-bottom: 35rem;
   }
   .team-wrapper {
     position: relative;
@@ -2355,6 +2378,14 @@ body {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
+  }
+  .team-more {
+    top: 87%;
+  }
+  .team-more:hover {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
   .team-card {
     margin-bottom: 2rem;
@@ -2411,6 +2442,15 @@ body {
 
   .contact {
     padding-top: 31rem;
+  }
+
+  .team-more {
+    top: 88.5%;
+  }
+  .team-more:hover {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 
   .footer-nav__col {

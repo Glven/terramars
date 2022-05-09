@@ -7,16 +7,24 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
+using Terramars.Service;
 
-namespace terramars
+namespace Terramars
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // добавляем поддержку контроллеров и представлений (MVC)
+            Configuration.Bind("Project", new Config());
+            services.AddMvc();
             services.AddControllersWithViews()
                 // вставляем совместимость с asd.net core 3.0
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
@@ -32,14 +40,12 @@ namespace terramars
 
             app.UseRouting();
 
-            // подключаем поддержку статичных файлов в приложении (css, js и тд)
-
             app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
+            }); ;
         }
     }
 }

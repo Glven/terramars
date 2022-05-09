@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace terramars.Controllers
+namespace Terramars.Controllers
 {
     public class HomeController : Controller
     {

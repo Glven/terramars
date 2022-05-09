@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\Second Course\\OOP\\project\\terramars\\terramars\\terramars\\terramars.csproj": {}
+    "D:\\Study\\Second Course\\OOP\\project\\terramars\\Terramars\\Terramars\\Terramars.csproj": {}
   },
   "projects": {
-    "D:\\Study\\Second Course\\OOP\\project\\terramars\\terramars\\terramars\\terramars.csproj": {
+    "D:\\Study\\Second Course\\OOP\\project\\terramars\\Terramars\\Terramars\\Terramars.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\Second Course\\OOP\\project\\terramars\\terramars\\terramars\\terramars.csproj",
-        "projectName": "terramars",
-        "projectPath": "D:\\Study\\Second Course\\OOP\\project\\terramars\\terramars\\terramars\\terramars.csproj",
+        "projectUniqueName": "D:\\Study\\Second Course\\OOP\\project\\terramars\\Terramars\\Terramars\\Terramars.csproj",
+        "projectName": "Terramars",
+        "projectPath": "D:\\Study\\Second Course\\OOP\\project\\terramars\\Terramars\\Terramars\\Terramars.csproj",
         "packagesPath": "C:\\Users\\Gloom\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\Second Course\\OOP\\project\\terramars\\terramars\\terramars\\obj\\",
+        "outputPath": "D:\\Study\\Second Course\\OOP\\project\\terramars\\Terramars\\Terramars\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gloom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,34 +39,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.16, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.16, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.16, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.16, )"
-            },
-            "Microsoft.Extensions.Logging.Debug": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[3.1.5, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

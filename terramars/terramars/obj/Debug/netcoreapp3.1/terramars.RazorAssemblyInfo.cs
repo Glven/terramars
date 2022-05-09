@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.RelatedAssemblyAttribute("terramars.Views")]
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.RelatedAssemblyAttribute("Terramars.Views")]
 
 // Создано классом WriteCodeFragment MSBuild.
 
