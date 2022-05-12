@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G2D9PxasE598XGpBTUwMnBcQs9fRPFe2wDK6DxTkC+w4dnjx/Jp0TZavfa+a1F0CyA2HyCRSjdlgIELPtzlNng==",
+  "dgSpecHash": "Z+pvz46X0qIQ8ayvxw6YJK4Ai/33FHnTFAzUTXFspG00uAm69V6+gYg10WtOG6GlZD8bcEj9+YKH9LVDxCyMKQ==",
   "success": true,
-  "projectFilePath": "D:\\Study\\Second Course\\OOP\\project\\terramars\\Terramars\\Terramars\\Terramars.csproj",
+  "projectFilePath": "D:\\Study\\Second Course\\OOP\\project\\terramars\\C#\\Terramars\\Terramars\\Terramars.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gloom\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Gloom\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
