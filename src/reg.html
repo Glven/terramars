@@ -9,70 +9,71 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-      <div class="toSave">
-         <input type="text" id="fullname" readonly>
-         <input type="text" id="dateValue" readonly>
-         <input type="text" id="sexValue" readonly>
-         <input type="text" id="mail" readonly>
-         <input type="text" id="nickname" readonly>
-         <input type="text" id="phoneValue" readonly>
-         <input type="text" id="passwordValue" readonly>
+   <section class="reg"></section>
+   <div class="toSave">
+      <input type="text" id="fullname" readonly>
+      <input type="text" id="dateValue" readonly>
+      <input type="text" id="sexValue" readonly>
+      <input type="text" id="mail" readonly>
+      <input type="text" id="nickname" readonly>
+      <input type="text" id="phoneValue" readonly>
+      <input type="text" id="passwordValue" readonly>
+   </div>
+   <a href="index.html" class="main">
+      <span>На Главную</span>
+   </a>
+   <h2 class="reg-title">Регистрация</h2>
+   <form action="POST" class="reg-form">
+      <div class="form-group">
+         <label for="lastname">Фамилия</label>
+         <input type="text" id="lastname" required>
       </div>
-      <a href="index.html" class="main">
-         <span>На Главную</span>
-      </a>
-      <h2 class="reg-title">Регистрация</h2>
-      <form action="POST" class="reg-form">
-         <div class="form-group">
-            <label for="lastname">Фамилия</label>
-            <input type="text" id="lastname" required>
+      <div class="form-group">
+         <label for="name">Имя</label>
+         <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+         <label for="secondname">Отчество</label>
+         <input type="text" id="secondname">
+      </div>
+      <div class="form-group">
+         <label for="date">Год рождения</label>
+         <input type="date" id="date" required>
+      </div>
+      <div class="form-sex">
+         <div class="form-sex__wrap">
+            <label for="male">Мужской</label>
+            <input type="radio" name="sex" id="male" required>
          </div>
-         <div class="form-group">
-            <label for="name">Имя</label>
-            <input type="text" id="name" required>
+         <div class="form-sex__wrap">
+            <label for="female">Женский</label>
+            <input type="radio" name="sex" id="female" required>
          </div>
-         <div class="form-group">
-            <label for="secondname">Отчество</label>
-            <input type="text" id="secondname">
-         </div>
-         <div class="form-group">
-            <label for="date">Год рождения</label>
-            <input type="date" id="date" required>
-         </div>
-         <div class="form-sex">
-            <div class="form-sex__wrap">
-               <label for="male">Мужской</label>
-               <input type="radio" name="sex" id="male" required>
-            </div>
-            <div class="form-sex__wrap">
-               <label for="female">Женский</label>
-               <input type="radio" name="sex" id="female" required>
-            </div>
-         </div>
-         <div class="form-group">
-            <label for="email">Почта</label>
-            <input type="email" id="email" required>
-         </div>
-         <div class="form-group">
-            <label for="login">Имя пользователя</label>
-            <input type="text" id="login" required>
-         </div>
-         <div class="form-group">
-            <label for="phone">Телефон</label>
-            <input type="phone" id="phone" required>
-         </div>
-         <div class="form-group">
-            <label for="password">Пароль</label>
-            <input type="password" id="password" required>
-         </div>
-         <div class="form-group">
-            <label for="passwordrepeat">Повторите пароль</label>
-            <input type="password" id="passwordrepeat" required>
-         </div>
-         <div class="form-btn">
-            <input type="submit" class="btn reg-form__btn" value="Регистрация">
-         </div>
-      </form>
+      </div>
+      <div class="form-group">
+         <label for="email">Почта</label>
+         <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+         <label for="login">Имя пользователя</label>
+         <input type="text" id="login" required>
+      </div>
+      <div class="form-group">
+         <label for="phone">Телефон</label>
+         <input type="phone" id="phone" required>
+      </div>
+      <div class="form-group">
+         <label for="password">Пароль</label>
+         <input type="password" id="password" required>
+      </div>
+      <div class="form-group">
+         <label for="passwordrepeat">Повторите пароль</label>
+         <input type="password" id="passwordrepeat" required>
+      </div>
+      <div class="form-btn">
+         <input type="submit" class="btn reg-form__btn" value="Регистрация">
+      </div>
+   </form>
 
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

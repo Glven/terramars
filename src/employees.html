@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
    <link rel="stylesheet" href="css/style.css">
-   <title>Рассчёт</title>
+   <title>Сотрудники</title>
 </head>
+
 <body>
 
    <div class="hiddenmenu">
       <h2 class="hiddenmenu-title">Меню</h2>
       <div class="hiddenmenu-nav">
-         <a href="index.html" class="hiddenmenu-nav__link">Главная</a>
-         <a href="catalog.html" class="hiddenmenu-nav__link">Каталог</a>
+         <a href="#hero" class="hiddenmenu-nav__link">Главная</a>
+         <a href="#" class="hiddenmenu-nav__link">Каталог</a>
          <a href="#" class="hiddenmenu-nav__link">Акции</a>
-         <a href="news.html" class="hiddenmenu-nav__link">Новости</a>
-         <a href="reviews.html" class="hiddenmenu-nav__link">Отзывы</a>
-         <a href="employees.html" class="hiddenmenu-nav__link">Сотрудники</a>
+         <a href="#" class="hiddenmenu-nav__link">Новости</a>
+         <a href="#" class="hiddenmenu-nav__link">Отзывы</a>
+         <a href="#" class="hiddenmenu-nav__link">Контакты</a>
       </div>
    </div>
+
+   <section id="up"></section>
 
    <header class="header">
       <div class="container">
@@ -91,110 +96,65 @@
       </div>
       <!-- /.container -->
    </header>
-   <!-- /.header -->
 
-   <section class="section section--dark calculate">
+   <section class="section section--dark employees">
       <div class="container">
-         <div class="row">
-            <div class="col-12 col-lg-6">
-               <div class="calculate-ranger ranger">
-                  <h2 class="calculate-ranger__title">Выберите ширину участка 10м = <span>3</span></h2>
-                  <input type="range" min="10" max="20000" step="10" value="10" class="ranger-btn calculate-ranger__width">
-                  <input type="text" class="ranger-value calculate-ranger__value" id="calculate-ranger__width" value="10">
+         <div class="employees-wrapper">
+            <div class="row">
+               <div class="col-12 col-md-6 col-lg-3">
+                  <div class="employees-card">
+                     <div class="employees-card__photo"><img src="img/director.jpg" alt="director"></div>
+                     <div class="employees-card__info">
+                        <h2>Билли Херрингтон</h2>
+                        <h3>Разработчик</h3>
+                        <span>C нами 15 лет</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-md-6 col-lg-3">
+                  <div class="employees-card">
+                     <div class="employees-card__photo"><img src="img/anal1.jpg" alt="director"></div>
+                     <div class="employees-card__info">
+                        <h2>Билли Херрингтон</h2>
+                        <h3>Разработчик</h3>
+                        <span>C нами 15 лет</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-md-6 col-lg-3">
+                  <div class="employees-card">
+                     <div class="employees-card__photo"><img src="img/director.jpg" alt="director"></div>
+                     <div class="employees-card__info">
+                        <h2>Билли Херрингтон</h2>
+                        <h3>Разработчик</h3>
+                        <span>C нами 15 лет</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-md-6 col-lg-3">
+                  <div class="employees-card">
+                     <div class="employees-card__photo"><img src="img/director.jpg" alt="director"></div>
+                     <div class="employees-card__info">
+                        <h2>Билли Херрингтон</h2>
+                        <h3>Разработчик</h3>
+                        <span>C нами 15 лет</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-md-6 col-lg-3">
+                  <div class="employees-card">
+                     <div class="employees-card__photo"><img src="img/director.jpg" alt="director"></div>
+                     <div class="employees-card__info">
+                        <h2>Билли Херрингтон</h2>
+                        <h3>Разработчик</h3>
+                        <span>C нами 15 лет</span>
+                     </div>
+                  </div>
                </div>
             </div>
-            <div class="col-12 col-lg-6">
-               <div class="calculate-ranger ranger">
-                  <h2 class="calculate-ranger__title">Выберите длину участка 10м = <span>3</span></h2>
-                  <input type="range" min="10" max="20000" step="10" value="10" class="ranger-btn calculate-ranger__height">
-                  <input type="text" class="ranger-value calculate-ranger__value" id="calculate-ranger__height" value="10">
-               </div>
-            </div>
-         </div>
-         <div class="calculate-square">
-            <h2 class="calculate-square__title">Общая площадь</h2>
-            <input type="text" class="calculate-square__value" value="0.1" readonly>
-            <span>км</span>
-         </div>
-         <h2 class="calculate-title">Выберите дополнительные услуги</h2>
-         <h3 class="calculate-subtitle">(цены представлены за 1 кв. км)</h3>
-         <div class="calculate-services">
-            <div class="calculate-services__wrap">
-               <input type="text" readonly value="Нет" class="hidden soil">
-               <div class="calculate-checkbox checkbox">
-                  <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="soil">
-               </div>
-               <label for="soil">Удобрение почвы ( <span>15</span> )</label>
-            </div>
-
-            <div class="calculate-services__wrap">
-               <input type="text" readonly value="Нет" class="hidden trees">
-               <div class="calculate-checkbox checkbox">
-                  <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="trees">
-               </div>
-               <label for="trees">Посадка растений ( <span>12</span> )</label>
-            </div>
-
-            <div class="calculate-services__wrap">
-               <input type="text" readonly value="Нет" class="hidden water">
-               <div class="calculate-checkbox checkbox">
-                  <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="water">
-               </div>
-               <label for="water">Водный регион ( <span>250</span> )</label>
-            </div>
-
-            <div class="calculate-services__wrap">
-               <input type="text" readonly value="Нет" class="hidden electro">
-               <div class="calculate-checkbox checkbox">
-                  <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="electro">
-               </div>
-               <label for="electro">Установка генераторов энергии ( <span>125 000</span> )</label>
-            </div>
-
-            <div class="calculate-services__wrap">
-               <input type="text" readonly value="Нет" class="hidden house">
-               <div class="calculate-checkbox checkbox">
-                  <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="house">
-               </div>
-               <label for="house">Постройка здания любой сложности и любых габаритов ( <span>500 000</span> )</label>
-            </div>
-
-            <div class="calculate-services__wrap">
-               <input type="text" readonly value="Нет" class="hidden air">
-               <div class="calculate-checkbox checkbox">
-                  <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="air">
-               </div>
-               <label for="air">Огорождение всей площади кислородным куполом ( <span>250 000</span> )</label>
-            </div>
-
-            <div class="calculate-services__wrap">
-               <input type="text" readonly value="Нет" class="hidden slave">
-               <div class="calculate-checkbox checkbox">
-                  <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="slave">
-               </div>
-               <label for="slave">Предоставление 4-х личных служанок (рабынь) ( <span>1 000 000</span> )</label>
-            </div>
-
-         </div>
-         <div class="calculate-total">
-            <h2 class="calculate-total__title">Общая сумма: </h2>
-            <input type="text" class="calculate-total__value">
-            <span>$</span>
-         </div>
-         <div class="calculate-buttons">
-            <button class="btn btn-tran calculate-buttons__btn calculate-buttons__fav">Добавить в избранное</button>
-            <button class="btn btn-primary calculate-buttons__btn calculate-buttons__card">Добавить в корзину</button>
          </div>
       </div>
-      <!-- /.container -->
    </section>
-   <!-- /.section section--dark calculate -->
-
-
-
-
-
-
 
    <footer class="footer section--dark">
       <div class="container">
@@ -234,9 +194,13 @@
       <!-- /.container -->
    </footer>
    <!-- /.footer section--dark -->
-
-
+   <a href="#up" class="up">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+   </a>
    <script src="https://use.fontawesome.com/329c6c77c2.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
    <script src="js/main.js"></script>
 </body>
+
+</html>
