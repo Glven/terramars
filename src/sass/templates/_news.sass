@@ -1,5 +1,14 @@
 .news
    padding: 20rem 0
+   background: url("./../img/news-bg.jpg") no-repeat center fixed
+   background-size: cover
+   &-title
+      margin-bottom: 4rem
+      text-align: center
+      font-family: 'Yeseva One', cursive
+      letter-spacing: 2px
+      color: $primary
+      font-size: 3.6rem
    &-card
       margin-bottom: 2rem
       border-top: 4rem solid $primary
@@ -7,6 +16,7 @@
       padding: 2rem
       box-shadow: inset 3px 3px 5px $main
       transition: all 0.3s ease-in-out
+      cursor: default   
       &__img
          margin-bottom: 1rem
          width: 100%

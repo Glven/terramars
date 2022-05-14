@@ -101,6 +101,18 @@
          &:hover
             transform: none
             box-shadow: none
+   .catalog
+      &-card
+         &:hover
+            img
+               transform: none
+         &__btn
+            &:hover
+               transform: none
+         &__fav
+            &:hover
+               background: transparent
+               color: $primary
 @media (min-width: 768px) and (max-width: 991px)
    .projects
       padding-bottom: 10rem
@@ -179,6 +191,14 @@
             max-width: 80%
    .progressbar
       display: none
+   .catalog
+      &-card
+         max-width: 380px
+         width: 100%
+         margin-left: 50%
+         transform: translateX(-50%)
+         &__fav
+            margin-bottom: 2rem
 @media (max-width: 575px)
    html
       font-size: 8px

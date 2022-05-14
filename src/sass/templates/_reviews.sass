@@ -1,0 +1,99 @@
+.reviews
+   position: relative
+   padding: 20rem 0
+   min-height: 100vh
+   background: url("./../img/reviews-bg.jpg") no-repeat center fixed
+   background-size: cover
+   &::after
+      position: absolute
+      z-index: 2
+      top: 0
+      left: 0
+      content: ""
+      width: 100%
+      height: 100%
+      background: rgba(0, 0, 0, 0.8)
+   &-title
+      position: relative
+      z-index: 4
+      margin-bottom: 4rem
+      text-align: center
+      font-family: 'Yeseva One', cursive
+      letter-spacing: 2px
+      color: $primary
+      font-size: 3.6rem
+   &-wrapper
+      display: flex
+      flex-direction: column-reverse 
+      position: relative
+      z-index: 4
+   &-card
+      cursor: default
+      margin-bottom: 3rem
+      padding: 2rem
+      border: 2px solid $primary
+      border-radius: 20px
+      &__name
+         font-family: 'Futura Demi', sans-serif
+         font-size: 2rem
+         color: $light
+         letter-spacing: 2px
+      &__date
+         display: flex
+         justify-content: flex-end
+         color: $primary
+         font-family: 'Yeseva One', cursive
+         font-size: 1.6rem
+         letter-spacing: 1px
+      &__grade
+         margin: 2rem 0
+         font-size: 2rem
+         font-family: 'Futura Demi', sans-serif
+         color: $light
+         span
+            margin-left: 2rem
+            color: $primary
+            font-size: 3rem
+            font-family: 'Yeseva One', cursive
+      &__comment
+         width: 80%
+         color: $light
+         font-size: 16px
+         line-height: 20px
+   &-form
+      position: relative
+      z-index: 4
+      display: flex
+      flex-direction: column
+      width: 80%
+      margin-bottom: 4rem
+      padding: 2rem
+      border-radius: 20px
+      box-shadow: 0 0 5px $light
+      .form-group
+         margin-bottom: 20px
+         input
+            width: 110px
+            text-align: center
+            padding: 10px 5px
+            background: transparent
+            box-shadow: 0 0 5px $light
+            border-radius: 10px
+            color: $light
+            font-size: 16px
+            &::placeholder
+               color: $light
+      textarea
+         margin-bottom: 20px
+         height: 12rem
+         padding: 10px
+         border-radius: 10px
+         box-shadow: 0 0 5px $light
+         background: transparent
+         color: $light
+         font-size: 16px
+         letter-spacing: 1px
+         &::placeholder
+            font-family: 'Futura Demi', sans-serif
+            color: $light
+            font-size: 16px
