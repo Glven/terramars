@@ -37,6 +37,7 @@ html {
 
 body {
   font-family: "Futura Book", sans-serif;
+  overflow-x: hidden;
 }
 
 img {
@@ -1493,6 +1494,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .calculate {
   padding: 12rem 0;
+  min-height: 100vh;
 }
 .calculate-ranger__title {
   margin-bottom: 4rem;
@@ -1526,38 +1528,24 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 4rem;
 }
 .calculate-square__title {
-  margin-bottom: 2rem;
   font-size: 2rem;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
   color: #fff;
   letter-spacing: 1px;
   font-family: "Yeseva One", cursive;
 }
 .calculate-square__value {
-  margin-right: 10px;
-  padding: 10px 0;
-  text-align: center;
+  margin-left: 1rem;
   font-family: "Futura Demi", sans-serif;
-  font-size: 16px;
+  font-size: 2rem;
   color: #EA003D;
-  background: transparent;
-  border-radius: 10px;
-  border: 2px solid #EA003D;
 }
-.calculate-square span {
-  font-size: 2.2rem;
-  text-transform: uppercase;
-  font-family: "Futura Demi", sans-serif;
-  color: #fff;
-}
-.calculate-square span::after {
+.calculate-square__value::after {
   display: inline-block;
-  margin-left: 2px;
   vertical-align: top;
+  margin-left: 2px;
   content: "2";
-  font-size: 14px;
-  color: #EA003D;
+  color: #fff;
+  font-size: 12px;
 }
 .calculate-title {
   margin-top: 4rem;
@@ -1566,12 +1554,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Yeseva One", cursive;
   letter-spacing: 2px;
   color: #fff;
-}
-.calculate-subtitle {
-  margin-bottom: 2rem;
-  font-family: "Yeseva One", cursive;
-  color: #fff;
-  font-size: 12px;
 }
 .calculate-services {
   display: -webkit-box;
@@ -1634,33 +1616,214 @@ h1, h2, h3, h4, h5, h6 {
 }
 .calculate-total__value {
   margin-right: 2px;
+  font-family: "Futura Demi", sans-serif;
+  font-size: 2.4rem;
+  color: #EA003D;
+}
+.calculate-total__value::after {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 2px;
+  font-size: 12px;
+  content: "$";
+  color: #fff;
+  font-family: "Yeseva One", cursive;
+}
+.calculate-name {
+  margin-top: 3rem;
+}
+.calculate-name input {
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #EA003D;
   padding: 10px;
   background: transparent;
-  text-align: center;
-  border: 2px solid #EA003D;
-  border-radius: 10px;
   font-family: "Futura Demi", sans-serif;
   font-size: 16px;
   color: #EA003D;
 }
-.calculate-total span {
-  font-size: 3rem;
+.calculate-name input::-webkit-input-placeholder {
   color: #EA003D;
 }
-.calculate-buttons {
+.calculate-name input::-moz-placeholder {
+  color: #EA003D;
+}
+.calculate-name input:-ms-input-placeholder {
+  color: #EA003D;
+}
+.calculate-name input::-ms-input-placeholder {
+  color: #EA003D;
+}
+.calculate-name input::placeholder {
+  color: #EA003D;
+}
+.calculate-save {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.calculate-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  max-width: 500px;
+  width: 100%;
+  margin-top: 4rem;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.calculate-submit form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.calculate-submit form input[type=text], .calculate-submit form input[type=number] {
+  width: 0;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+}
+.calculate-submit__btn {
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.calculate-submit__btn:hover {
+  -webkit-transform: translateX(-50%) scale(1.1);
+  -ms-transform: translateX(-50%) scale(1.1);
+  transform: translateX(-50%) scale(1.1);
+}
+
+.cart {
+  min-height: 100vh;
+  padding: 20rem 0;
+}
+.cart-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-bottom: 2rem;
+}
+.cart-card .table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 6rem;
+  padding: 1rem 0;
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  background-color: #EA003D;
+  color: #fff;
+  font-family: "Futura Demi", sans-serif;
+  font-size: 2rem;
+  border: 2px solid #EA003D;
 }
-.calculate-buttons__fav {
-  margin-right: 4rem;
+.cart-card__elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 0;
+  font-size: 14px;
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  color: #fff;
+  border-left: 2px solid #EA003D;
+}
+.cart-card__elem:last-child {
+  border-right: 2px solid #EA003D;
+}
+.cart-btn {
+  margin-top: 5rem;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.cart-btn:hover {
+  -webkit-transform: translate(-50%) scale(0.9);
+  -ms-transform: translate(-50%) scale(0.9);
+  transform: translate(-50%) scale(0.9);
+}
+
+.favorites {
+  padding: 20rem 0;
+  min-height: 100vh;
+}
+.favorites-card {
+  margin-bottom: 2rem;
+}
+.favorites-card__photo {
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.favorites-card__name {
+  margin-bottom: 1rem;
+  font-family: "Yeseva One", cursive;
+  font-size: 2.4rem;
+  color: #EA003D;
+  letter-spacing: 1px;
+}
+.favorites-card__square {
+  margin-bottom: 1rem;
+  font-family: "Futura Demi", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+}
+.favorites-card__square::after {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 4px;
+  content: "2";
+  font-size: 12px;
+  font-family: "Yeseva One", cursive;
+  color: #EA003D;
+}
+.favorites-card__services {
+  margin-bottom: 1rem;
+  font-size: 16px;
+  color: #fff;
+}
+.favorites-card__price {
+  margin-bottom: 1rem;
+  font-family: "Futura Demi", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+}
+.favorites-card__price::after {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 4px;
+  content: "$";
+  font-size: 12px;
+  font-family: "Yeseva One", cursive;
+  color: #EA003D;
+}
+.favorites-card__btn {
+  border-radius: 20px;
+  width: 100%;
 }
 
 .log {

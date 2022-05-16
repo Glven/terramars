@@ -211,10 +211,13 @@ $(document).ready(function () {
          $('#passwordValue').val($('#password').val());
          console.log($('#fullname').val());
       });
-  }
-
-  if($('section').hasClass('calculate')){
-      $('.calculate-total__value').val(10*10*3);
+   }
+   
+   if($('section').hasClass('calculate')){
+      $('.calculate-square__value').text(`${(parseInt($('.calculate-ranger__width').val())*parseInt($('.calculate-ranger__height').val()))/1000}` + " км");
+      $('.calculate-total__value').text(parseInt($('.calculate-ranger__width').val())*parseInt($('.calculate-ranger__height').val())/100 *3);
+      $('.regionSquare').val((parseInt($('.calculate-ranger__width').val())*parseInt($('.calculate-ranger__height').val()))/1000);
+      $('.regionPrice').val(parseInt($('.calculate-ranger__width').val())*parseInt($('.calculate-ranger__height').val())/100 *3);
 
       $('.calculate-ranger__width').on('input', function(){
          $('#calculate-ranger__width').val($(this).val());
@@ -242,77 +245,34 @@ $(document).ready(function () {
          }
          $('.calculate-ranger__height').val($(this).val());
       });
-
+      var prices = $('.price'), check = $('.calculate-checkbox__btn'), total, serviceName = $('.serviceName'), totalServices = [];
       $('input').on('input', function(){
-         var square = 1;
-         var values = $('.calculate-ranger__value');
-         var result = 1;
-         var soil = 15, meter = 3, trees = 12, water=250, electro = 125000 ,house = 500000, air = 250000, slave = 1000000;
-         values.each(function(){
-            square *= parseInt($(this).val());
+         $('.calculate-square__value').text(`${(parseInt($('.calculate-ranger__width').val())*parseInt($('.calculate-ranger__height').val()))/1000}` + " км");
+         $('.regionSquare').val((parseInt($('.calculate-ranger__width').val())*parseInt($('.calculate-ranger__height').val()))/1000);
+         total = ($('.calculate-ranger__width').val() * $('.calculate-ranger__height').val())/100 * 3;
+         check.each(function(index){
+            if($(check[index]).is(':checked')){
+               total += parseInt($(prices[index]).text());
+            }
          });
-         result = square * meter;
-         square /= 1000;
-         $('.calculate-square__value').val(square);
+         $('.calculate-total__value').text(total);
+         $('.regionPrice').val(total);
+         $('.regionName').val($('.calculate-name__input').val());
+      });
 
-         if($('#soil').is(':checked')){
-            $('.soil').val('Есть');
-            result += (soil * square);
+      $('.calculate-save__btn').click(function(){
+         var i = 0;
+         check.each(function(index){
+            if($(check[index]).is(':checked')){
+               totalServices[i] = `${$(serviceName[index]).text()} `;
+               i++;
+            }
+         });
+         var listOfServices = "";
+         for (let i = 0; i < totalServices.length; i++) {
+            listOfServices += totalServices[i];
+            $('.regionServices').val(listOfServices);
          }
-         else{
-            $('.soil').val('Нет');
-         }
-
-         if($('#trees').is(':checked')){
-            $('.trees').val('Есть');
-            result += (trees * square);
-         }
-         else{
-            $('.trees').val('Нет');
-         }
-
-         if($('#water').is(':checked')){
-            $('.water').val('Есть');
-            result += (water * square);
-         }
-         else{
-            $('.water').val('Нет');
-         }
-
-         if($('#electro').is(':checked')){
-            $('.electro').val('Есть');
-            result += electro;
-         }
-         else{
-            $('.electro').val('Нет');
-         }
-
-         if($('#house').is(':checked')){
-            $('.house').val('Есть');
-            result += house;
-         }
-         else{
-            $('.house').val('Нет');
-         }
-
-         if($('#air').is(':checked')){
-            $('.air').val('Есть');
-            result += air;
-         }
-         else{
-            $('.air').val('Нет');
-         }
-
-         if($('#slave').is(':checked')){
-            $('.slave').val('Есть');
-            result += slave;
-         }
-         else{
-            $('.slave').val('Нет');
-         }
-
-         // итого
-         $('.calculate-total__value').val(result.toFixed(1));
       });
   }
 });

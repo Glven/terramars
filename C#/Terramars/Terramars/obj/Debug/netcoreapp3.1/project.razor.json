@@ -14412,11 +14412,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Study\\Second Course\\OOP\\project\\terramars\\C#\\Terramars\\Terramars\\Views\\Shared\\TeamPartial.cshtml",
-      "TargetPath": "Views\\Shared\\TeamPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\Study\\Second Course\\OOP\\project\\terramars\\C#\\Terramars\\Terramars\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -14437,8 +14432,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Study\\Second Course\\OOP\\project\\terramars\\C#\\Terramars\\Terramars\\Views\\Shared\\HeroPartial.cshtml",
-      "TargetPath": "Views\\Shared\\HeroPartial.cshtml",
+      "FilePath": "d:\\Study\\Second Course\\OOP\\project\\terramars\\C#\\Terramars\\Terramars\\Views\\Home\\TeamPartial.cshtml",
+      "TargetPath": "Views\\Home\\TeamPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Study\\Second Course\\OOP\\project\\terramars\\C#\\Terramars\\Terramars\\Views\\Home\\HeroPartial.cshtml",
+      "TargetPath": "Views\\Home\\HeroPartial.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14447,8 +14447,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Study\\Second Course\\OOP\\project\\terramars\\C#\\Terramars\\Terramars\\Views\\Shared\\ContactPartial.cshtml",
-      "TargetPath": "Views\\Shared\\ContactPartial.cshtml",
+      "FilePath": "d:\\Study\\Second Course\\OOP\\project\\terramars\\C#\\Terramars\\Terramars\\Views\\Home\\ContactPartial.cshtml",
+      "TargetPath": "Views\\Home\\ContactPartial.cshtml",
       "FileKind": "mvc"
     },
     {
