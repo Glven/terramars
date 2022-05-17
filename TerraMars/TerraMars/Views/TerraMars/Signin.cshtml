@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "_Exception";
+}
+<a asp-action="Index" asp-controller="TerraMars" class="main">
+    <span>На Главную</span>
+</a>
+<h2 class="reg-title">Регистрация</h2>
+<form method="POST" class="reg-form">
+    <div class="form-group">
+        <label for="lastname">Фамилия</label>
+        <input type="text" id="lastname" required>
+    </div>
+    <div class="form-group">
+        <label for="name">Имя</label>
+        <input type="text" id="name" required>
+    </div>
+    <div class="form-group">
+        <label for="secondname">Отчество</label>
+        <input type="text" id="secondname">
+    </div>
+    <div class="form-group">
+        <label for="date">Год рождения</label>
+        <input type="date" id="date" required>
+    </div>
+    <div class="form-sex">
+        <div class="form-sex__wrap">
+        <label for="male">Мужской</label>
+        <input type="radio" name="sex" id="male" required>
+        </div>
+        <div class="form-sex__wrap">
+        <label for="female">Женский</label>
+        <input type="radio" name="sex" id="female" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Почта</label>
+        <input type="email" id="email" required>
+    </div>
+    <div class="form-group">
+        <label for="login">Имя пользователя</label>
+        <input type="text" id="login" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input type="phone" id="phone" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" required>
+    </div>
+    <div class="form-group">
+        <label for="passwordrepeat">Повторите пароль</label>
+        <input type="password" id="passwordrepeat" required>
+    </div>
+    <div class="form-btn">
+        <input type="submit" class="btn reg-form__btn" value="Регистрация">
+    </div>
+</form>

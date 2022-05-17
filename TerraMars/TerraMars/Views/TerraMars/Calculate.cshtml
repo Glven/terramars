@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<section class="section section--dark calculate">
+    <div class="container">
+        <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="calculate-ranger ranger">
+                <h2 class="calculate-ranger__title">Выберите ширину участка 100м = <span>3</span></h2>
+                <input type="range" min="10" max="20000" step="10" value="10" class="ranger-btn calculate-ranger__width">
+                <input type="text" class="ranger-value calculate-ranger__value" id="calculate-ranger__width" value="10">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="calculate-ranger ranger">
+                <h2 class="calculate-ranger__title">Выберите длину участка 100м = <span>3</span></h2>
+                <input type="range" min="10" max="20000" step="10" value="10" class="ranger-btn calculate-ranger__height">
+                <input type="text" class="ranger-value calculate-ranger__value" id="calculate-ranger__height" value="10">
+            </div>
+        </div>
+        </div>
+        <div class="calculate-square">
+        <h2 class="calculate-square__title">Общая площадь</h2>
+        <div class="calculate-square__value"></div>
+        </div>
+        <h2 class="calculate-title">Выберите дополнительные услуги</h2>
+        <div class="calculate-services">
+        <div class="calculate-services__wrap">
+            <div class="calculate-checkbox checkbox">
+                <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="service1">
+            </div>
+            <label for="service1"><span class="serviceName">Удобрение почвы</span> - <span class="price">2500</span></label>
+        </div>
+        <div class="calculate-services__wrap">
+            <div class="calculate-checkbox checkbox">
+                <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="service2">
+            </div>
+            <label for="service2"><span class="serviceName">Посадка растений</span> - <span class="price">1100</span></label>
+        </div>
+        <div class="calculate-services__wrap">
+            <div class="calculate-checkbox checkbox">
+                <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="service3">
+            </div>
+            <label for="service3"><span class="serviceName">Водный регион</span> - <span class="price">50000</span></label>
+        </div>
+        <div class="calculate-services__wrap">
+            <div class="calculate-checkbox checkbox">
+                <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="service4">
+            </div>
+            <label for="service4"><span class="serviceName">4 секс рабыни</span> - <span class="price">100000</span></label>
+        </div>
+        </div>
+
+        <div class="calculate-save">
+        <button class="btn btn-primary calculate-save__btn">
+            Сохранить
+        </button>
+        </div>
+         
+        <div class="calculate-total">
+        <h2 class="calculate-total__title">Общая сумма: </h2>
+        <div class="calculate-total__value"></div>
+        </div>
+        <div class="calculate-name">
+        <input type="text" class="calculate-name__input" placeholder="Придумайте имя участку" required>
+        </div>
+        <div class="calculate-submit">
+        <form method="post">
+            <input type="text" class="regionName" readonly>
+            <input type="number" min="0.1" class="regionSquare" readonly>
+            <input type="text" class="regionServices" readonly>
+            <input type="number" class="regionPrice" readonly>
+            <input type="submit" class="btn btn-tran calculate-submit__btn calculate-submit__fav" value="Добавить в избранное">
+        </form>
+        <form method="post">
+            <input type="text" class="regionName" readonly>
+            <input type="number" min="0.1" class="regionSquare" readonly>
+            <input type="text" class="regionServices" readonly>
+            <input type="number" class="regionPrice" readonly>
+            <input type="submit" class="btn btn-primary calculate-submit__btn calculate-submit__card" value="Добавить в корзину">
+        </form>
+        </div>
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.section section--dark calculate -->

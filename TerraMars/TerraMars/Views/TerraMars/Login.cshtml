@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "_Exception";
+}
+<div class="log">
+    <a asp-action="Index" asp-controller="TerraMars" class="log-main">
+        <span>На Главную</span>
+    </a>
+    <div class="log-container">
+        <h2 class="log-title">Вход</h2>
+        <form method="POST" class="log-form">
+        <div class="form-group">
+            <label for="login">Логин</label>
+            <input type="text" id="login" placeholder="Логин или почта" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" placeholder="Ваш пароль" required>
+        </div>
+        <div class="form-btn">
+            <input type="submit" class="btn log-form__btn" value="Войти">
+        </div>
+        </form>
+    </div>
+</div>

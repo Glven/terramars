@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @await Html.PartialAsync("MetatagsPartial")
+    @await Html.PartialAsync("CssPartial")
+</head>
+<body>
+
+   <div class="hiddenmenu">
+      <h2 class="hiddenmenu-title">Меню</h2>
+      <div class="hiddenmenu-nav">
+         <a href="#hero" class="hiddenmenu-nav__link">Главная</a>
+         <a href="#" class="hiddenmenu-nav__link">Каталог</a>
+         <a href="#" class="hiddenmenu-nav__link">Акции</a>
+         <a href="#" class="hiddenmenu-nav__link">Новости</a>
+         <a href="#" class="hiddenmenu-nav__link">Отзывы</a>
+         <a href="#" class="hiddenmenu-nav__link">Контакты</a>
+      </div>
+   </div>
+
+   <section id="up"></section>
+
+   <header class="header">
+      <div class="container">
+         <div class="header-wrapper">
+            <div class="row align-items-center justify-content-between">
+               <div class="col-3 col-lg-2">
+                  <a asp-action="Index" asp-controller="TerraMars" class="header-logo"></a>
+               </div>
+
+               <div class="col-1 col-lg-9">
+                  <div class="header-nav">
+                     <div class="header-menu">
+                        <a asp-action="Index" asp-controller="TerraMars" class="header-menu__link">Главная</a>
+                        <a asp-action="Catalog" asp-controller="TerraMars" class="header-menu__link">Каталог</a>
+                        <a asp-action="News" asp-controller="TerraMars" class="header-menu__link">Новости</a>
+                        <a asp-action="Reviews" asp-controller="TerraMars" class="header-menu__link">Отзывы</a>
+                        <a asp-action="Employees" asp-controller="TerraMars" class="header-menu__link">Сотрудники</a>
+                        <a asp-action="Offices" asp-controller="TerraMars" class="header-menu__link">Офисы</a>
+                     </div>
+                     <!-- /.header-menu -->
+                     <div class="header-search">
+                        <form action="search" class="header-search__form">
+                           <input type="search" placeholder="Искать...">
+                           <button type="submit">
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                           </button>
+                        </form>
+                        <div class="header-search__icon">
+                           <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                     </div>
+                     <!-- /.header-search -->
+                  </div> 
+               </div>
+
+               <div class="col-6 col-lg-1">
+                  <div class="header-profile">
+                     <div class="header-profile__icon">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                     </div>
+                     <div class="header-drop">
+                        <a asp-action="Cart" asp-controller="TerraMars" class="header-drop__btn header-drop__card">
+                           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                           Корзина
+                        </a>
+                        <a asp-action="Favorites" asp-controller="TerraMars" class="header-drop__btn header-drop__fav">
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           Избранное
+                        </a>
+                        <div class="header-drop__buttons">
+                           <a asp-action="Login" asp-controller="TerraMars" class="btn header-drop__log">Вход</a>
+                           <a asp-action="Signin" asp-controller="TerraMars" class="btn header-drop__reg">Регистрация</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="header-hiddenmenu">
+                     <div class="header-hiddenmenu__btn">
+                        <span></span>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+            <!-- /.row -->
+         </div>
+         <!-- /.header-wrapper -->
+      </div>
+      <!-- /.container -->
+   </header>
+   <!-- /.header -->
+
+   
+
+   @RenderBody()
+
+
+
+
+   <footer class="footer section--dark">
+      <div class="container">
+         <div class="footer-nav">
+            <div class="footer-nav__col">
+               <a href="https://vk.com" class="footer-nav__link footer-nav__link--vk">
+                  <i class="fa fa-vk" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://instagram.com" class="footer-nav__link footer-nav__link--inst">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://facebook.com" class="footer-nav__link footer-nav__link--fb">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://web.telegram.org" class="footer-nav__link footer-nav__link--tg">
+                  <i class="fa fa-telegram" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://web.whatsapp.com" class="footer-nav__link footer-nav__link--what">
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+               </a>
+            </div>
+            <div class="footer-nav__col">
+               <a href="https://twitter.com" class="footer-nav__link footer-nav__link--tw">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+      <!-- /.container -->
+   </footer>
+   <!-- /.footer section--dark -->
+
+   <a href="#up" class="up">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+   </a>
+
+   @await Html.PartialAsync("ScriptsPartial")
+</body>
+</html>
