@@ -87,3 +87,4 @@ D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\L
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\Signin.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Exception.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\Calculate.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Admin.cshtml.g.cs
