@@ -1,0 +1,50 @@
+﻿@{
+	Layout = "_Admin";
+}
+@model AllModels
+<section class="adminEmployees section--dark">
+    <div class="container-fluid">
+        <form asp-action="createEmployee" asp-controller="Admin" method="post" class="formForAdmin">
+            <h2>Добавление сотрудника</h2>
+            <div class="form-group">
+                <input type="text" name="employeePhoto" placeholder="Введите ссылку на фото сотрудника" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="employeeName" placeholder="Введите полное имя сотрудника" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="employeePost" placeholder="Введите должность сотрудника" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="employeeExperience" placeholder="Введите стаж работы" required>
+            </div>
+            <div class="btn-wrapper">
+				<input type="submit" value="Добавить сотрудника" class="btn btn-primary" />
+            </div>
+        </form>
+        <table class="adminTable">
+            <tr>
+                <th>ID сотрудника</th>
+                <th>Фото</th>
+                <th>ФИО</th>
+                <th>Должность</th>
+                <th>Действия</th>
+            </tr>
+            @foreach (var e in Model.Employees)
+            {
+                <tr>
+                    <td>@e.Id</td>
+					<td>@e.Photo</td>
+					<td>@e.Fullname</td>
+					<td>@e.Post</td>
+					<td>
+						<div class="adminActions">
+							<a href="editEmployee/@e.Id">Редактировать</a>
+							<a href="deleteEmployee/@e.Id">Удалить</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</section>

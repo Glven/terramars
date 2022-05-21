@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "_Layout";
 }
-
+@model AllModels
 <section class="section section--dark calculate">
     <div class="container">
         <div class="row">
@@ -26,30 +26,15 @@
         </div>
         <h2 class="calculate-title">Выберите дополнительные услуги</h2>
         <div class="calculate-services">
-        <div class="calculate-services__wrap">
-            <div class="calculate-checkbox checkbox">
-                <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="service1">
-            </div>
-            <label for="service1"><span class="serviceName">Удобрение почвы</span> - <span class="price">2500</span></label>
-        </div>
-        <div class="calculate-services__wrap">
-            <div class="calculate-checkbox checkbox">
-                <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="service2">
-            </div>
-            <label for="service2"><span class="serviceName">Посадка растений</span> - <span class="price">1100</span></label>
-        </div>
-        <div class="calculate-services__wrap">
-            <div class="calculate-checkbox checkbox">
-                <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="service3">
-            </div>
-            <label for="service3"><span class="serviceName">Водный регион</span> - <span class="price">50000</span></label>
-        </div>
-        <div class="calculate-services__wrap">
-            <div class="calculate-checkbox checkbox">
-                <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="service4">
-            </div>
-            <label for="service4"><span class="serviceName">4 секс рабыни</span> - <span class="price">100000</span></label>
-        </div>
+            @foreach (var s in Model.Services)
+           {
+               <div class="calculate-services__wrap">
+                    <div class="calculate-checkbox checkbox">
+                        <input type="checkbox" class="calculate-checkbox__btn checkbox-btn" id="@s.Title">
+                    </div>
+                    <label for="@s.Title"><span class="serviceName">@s.Title</span> - <span class="price">@s.Price</span></label>
+                </div>
+           }
         </div>
 
         <div class="calculate-save">

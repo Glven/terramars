@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TerraMars.Data;
+using TerraMars.Data.Repositories;
+using TerraMars.Models.Interfaces;
 
 namespace TerraMars
 {
@@ -25,6 +27,8 @@ namespace TerraMars
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<TerramarsContext>();
+            services.AddTransient<IEmployee, EmployeesRepository>();
+            services.AddTransient<IService, ServicesRepository>();
             services.AddMvc();
             services.AddControllersWithViews()
                 // вставляем совместимость с asd.net core 3.0

@@ -2809,6 +2809,213 @@ body {
   cursor: pointer;
 }
 
+.adminEdit{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.adminHeader {
+  padding: 2rem 0;
+  background: #f2f2f2;
+  font-size: 16px;
+}
+.adminHeader-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.adminHeader-name {
+  font-size: 18px;
+}
+.adminHeader-name a {
+  color: #EA003D;
+}
+.adminHeader-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.adminHeader-nav__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 1rem;
+  padding: 7px 17px;
+  font-family: "Futura Demi", sans-serif;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  color: #EA003D;
+}
+.adminHeader-nav__link:last-child {
+  margin-right: 0;
+}
+
+.adminTable {
+  width: 100%;
+}
+.adminTable tr td, .adminTable tr th {
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px 0;
+}
+.adminTable tr td:first-child, .adminTable tr th:first-child {
+  border-left: 2px solid #fff;
+}
+.adminTable tr td {
+  color: #fff;
+}
+.adminTable tr th {
+  color: #EA003D;
+}
+
+.adminActions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.adminActions a {
+  display: block;
+  color: #00f;
+  width: 100%;
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-right: 2px solid #100E19;
+}
+.adminActions a:last-child {
+  border-right: none;
+}
+
+.formForAdmin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 40rem;
+  padding: 2rem 4rem 4rem 4rem;
+  margin: 3rem auto;
+  width: 100%;
+  -webkit-box-shadow: 0 0 5px #fff;
+  box-shadow: 0 0 5px #fff;
+  border-radius: 10px;
+}
+.formForAdmin h2 {
+  font-family: "Yeseva One", cursive;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+.formForAdmin h3 {
+  font-family: "Yeseva One", cursive;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.formForAdmin .form-group {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.formForAdmin .form-group input, .formForAdmin .form-group textarea {
+  width: 100%;
+  padding: 10px 20px;
+  background: transparent;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #fff;
+  box-shadow: 0 0 5px #fff;
+  color: #fff;
+}
+.formForAdmin .form-group textarea {
+  resize: none;
+  height: 10rem;
+}
+.formForAdmin .btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.formForAdmin .form-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.formForAdmin .form-check label {
+  font-size: 14px;
+  font-family: "Futura Demi", sans-serif;
+  margin-left: 5px;
+  color: #fff;
+}
+.formForAdmin input[type=submit] {
+  margin-top: 1rem;
+}
+
+.adminServices {
+  margin-top: 2rem;
+}
+
+.adminNews .formForNews {
+  max-width: none;
+  width: 100%;
+}
+.adminNews .formForNews .form-group input {
+  max-width: 400px;
+}
+
+.adminNews, .adminEmployees, .feedbacks, .adminReviews, .adminRegions, .adminServices, .users, .adminOffices {
+  padding: 5rem 0;
+  min-height: 100vh;
+}
+
 @media (max-width: 991px) {
   .btn-tran:hover {
     background: transparent;

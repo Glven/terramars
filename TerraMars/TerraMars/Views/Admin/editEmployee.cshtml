@@ -1,0 +1,10 @@
+﻿@model TerraMars.Data.Entities.Employee
+
+<div class="container">
+	<h2>Редактирование сотрудника</h2>
+	@using (Html.BeginForm())
+	{
+		@Html.EditorForModel()
+		<input type="submit" value="Сохранить изменения" />
+	}
+</div>

@@ -1,61 +1,25 @@
 ﻿@{
     Layout = "_Layout";
 }
+@model AllModels
 <section class="section section--dark employees">
     <div class="container">
         <h1 class="employees-title">Наши сотрудники</h1>
         <div class="employees-wrapper">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="employees-card">
-                    <div class="employees-card__photo"><img src="~/img/director.jpg" alt="director"></div>
-                    <div class="employees-card__info">
-                    <h2>Билли Херрингтон</h2>
-                    <h3>Разработчик</h3>
-                    <span>C нами 15 лет</span>
+            @foreach (var e in Model.Employees)
+            {
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="employees-card">
+                        <div class="employees-card__photo"><img src="@e.Photo" alt="director"></div>
+                        <div class="employees-card__info">
+                        <h2>@e.Fullname</h2>
+                        <h3>@e.Post</h3>
+                        <span>C нами @e.Experience лет</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="employees-card">
-                    <div class="employees-card__photo"><img src="~/img/anal1.jpg" alt="director"></div>
-                    <div class="employees-card__info">
-                    <h2>Билли Херрингтон</h2>
-                    <h3>Разработчик</h3>
-                    <span>C нами 15 лет</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="employees-card">
-                    <div class="employees-card__photo"><img src="~/img/director.jpg" alt="director"></div>
-                    <div class="employees-card__info">
-                    <h2>Билли Херрингтон</h2>
-                    <h3>Разработчик</h3>
-                    <span>C нами 15 лет</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="employees-card">
-                    <div class="employees-card__photo"><img src="~/img/director.jpg" alt="director"></div>
-                    <div class="employees-card__info">
-                    <h2>Билли Херрингтон</h2>
-                    <h3>Разработчик</h3>
-                    <span>C нами 15 лет</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="employees-card">
-                    <div class="employees-card__photo"><img src="~/img/director.jpg" alt="director"></div>
-                    <div class="employees-card__info">
-                    <h2>Билли Херрингтон</h2>
-                    <h3>Разработчик</h3>
-                    <span>C нами 15 лет</span>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
         </div>
     </div>

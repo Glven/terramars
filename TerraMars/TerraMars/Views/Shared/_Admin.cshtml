@@ -1,1 +1,32 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @await Html.PartialAsync("MetatagsPartial")
+    @await Html.PartialAsync("CssPartial")
+</head>
+
+<body>
+    <header class="adminHeader">
+        <div class="container">
+            <div class="adminHeader-wrapper">
+                <div class="adminHeader-name">
+                    <a asp-action="Index" asp-controller="Admin">Панель админа</a>
+                </div>
+                <div class="adminHeader-nav">
+                    <a asp-action="adminUser" asp-controller="Admin" class="adminHeader-nav__link">Пользователи</a>
+                    <a asp-action="adminCatalog" asp-controller="Admin" class="adminHeader-nav__link">Каталог</a>
+                    <a asp-action="adminServices" asp-controller="Admin" class="adminHeader-nav__link">Услуги</a>
+                    <a asp-action="adminNews" asp-controller="Admin" class="adminHeader-nav__link">Новости</a>
+                    <a asp-action="adminReviews" asp-controller="Admin" class="adminHeader-nav__link">Отзывы</a>
+                    <a asp-action="adminFeedbacks" asp-controller="Admin" class="adminHeader-nav__link">Заявки</a>
+                    <a asp-action="adminEmployees" asp-controller="Admin" class="adminHeader-nav__link">Сотрудники</a>
+                    <a asp-action="adminOffices" asp-controller="Admin" class="adminHeader-nav__link">Офисы</a>
+                </div>
+            </div>
+        </div>
+    </header>
+        @RenderBody()
+    </body>
+
+</html>

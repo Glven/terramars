@@ -21,13 +21,20 @@ using TerraMars;
 #nullable disable
 #nullable restore
 #line 2 "D:\terramars\TerraMars\TerraMars\Views\_ViewImports.cshtml"
+using TerraMars.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\terramars\TerraMars\TerraMars\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"87edda9a7ca30427e39ec52bbd514666ec1ceb7a", @"/Views/Shared/_Exception.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"107d92b33e0ca339c773f80701d4d8a98082c72b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2174448b87b62174decba6f36793aeb82fdc75be", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Exception : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -56,7 +63,7 @@ using Microsoft.AspNetCore.Mvc.TagHelpers;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"ru\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87edda9a7ca30427e39ec52bbd514666ec1ceb7a3235", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87edda9a7ca30427e39ec52bbd514666ec1ceb7a3399", async() => {
                 WriteLiteral("\r\n    ");
 #nullable restore
 #line 4 "D:\terramars\TerraMars\TerraMars\Views\Shared\_Exception.cshtml"
@@ -86,7 +93,7 @@ Write(await Html.PartialAsync("CssPartial"));
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87edda9a7ca30427e39ec52bbd514666ec1ceb7a4674", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87edda9a7ca30427e39ec52bbd514666ec1ceb7a4838", async() => {
                 WriteLiteral("\r\n\r\n    ");
 #nullable restore
 #line 9 "D:\terramars\TerraMars\TerraMars\Views\Shared\_Exception.cshtml"

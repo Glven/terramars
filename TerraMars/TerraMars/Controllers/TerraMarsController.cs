@@ -1,5 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TerraMars.Models.Interfaces;
+using TerraMars.Data;
+using System.Linq;
+using TerraMars.Models;
+using System;
+using TerraMars.Data.Entities;
 
 namespace TerraMars.Controllers
 {
@@ -13,7 +19,10 @@ namespace TerraMars.Controllers
         [HttpGet]
         public async Task<IActionResult> Calculate()
         {
-            return View();
+            var db = new TerramarsContext();
+            var service = db.Services.ToList();
+            var model = new AllModels() { Services = service };
+            return View(model);
         }
         [HttpGet]
         public async Task<IActionResult> Catalog()
@@ -33,7 +42,10 @@ namespace TerraMars.Controllers
         [HttpGet]
         public async Task<IActionResult> Employees()
         {
-            return View();
+            var db = new TerramarsContext();
+            var employee = db.Employees.ToList();
+            var model = new AllModels() { Employees = employee };
+            return View(model);
         }
         [HttpGet]
         public async Task<IActionResult> Offices()

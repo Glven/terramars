@@ -21,13 +21,20 @@ using TerraMars;
 #nullable disable
 #nullable restore
 #line 2 "D:\terramars\TerraMars\TerraMars\Views\_ViewImports.cshtml"
+using TerraMars.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\terramars\TerraMars\TerraMars\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8b1249da4bcf3fe141d0492d3646ef46ee7bc762", @"/Views/TerraMars/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"107d92b33e0ca339c773f80701d4d8a98082c72b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2174448b87b62174decba6f36793aeb82fdc75be", @"/Views/_ViewImports.cshtml")]
     public class Views_TerraMars_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Calculate", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -82,7 +89,7 @@ using Microsoft.AspNetCore.Mvc.TagHelpers;
             <div class=""hero-buttons"">
                <button class=""btn btn-tran hero-buttons__send"">Отправить заявку</button>
                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b1249da4bcf3fe141d0492d3646ef46ee7bc7626265", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b1249da4bcf3fe141d0492d3646ef46ee7bc7626429", async() => {
                 WriteLiteral("Рассчитать стоимость");
             }
             );
@@ -396,7 +403,7 @@ using Microsoft.AspNetCore.Mvc.TagHelpers;
     <div class=""container"">
         <div class=""contact-formContai");
             WriteLiteral("ner\">\r\n        <h2 class=\"contact-formContainer__title text--light\">Остались вопросы?</h2>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b1249da4bcf3fe141d0492d3646ef46ee7bc76222973", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b1249da4bcf3fe141d0492d3646ef46ee7bc76223137", async() => {
                 WriteLiteral(@"
             <div class=""row"">
                 <div class=""col-12 col-lg-6"">
@@ -460,7 +467,7 @@ using Microsoft.AspNetCore.Mvc.TagHelpers;
         <h2 class=""modal-container__title"">Свяжитесь с нами</h2>
         <!-- /.modal-container__title -->
         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b1249da4bcf3fe141d0492d3646ef46ee7bc76226689", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b1249da4bcf3fe141d0492d3646ef46ee7bc76226853", async() => {
                 WriteLiteral(@"
         <div class=""form-group"">
             <label for=""name"">Имя</label>

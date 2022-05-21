@@ -1,0 +1,55 @@
+﻿@{
+	Layout = "_Admin";
+}
+<section class="adminRegions section--dark">
+    <div class="container-fluid">
+        <form method="post" class="formForAdmin">
+            <h2>Добавить в каталог</h2>
+            <div class="form-group">
+                <input type="text" name="regionPhoto" required placeholder="Добавьте ссылку на фото региона">
+            </div>
+            <div class="form-group">
+                <input type="text" name="regionName" required placeholder="Имя региона">
+            </div>
+            <div class="form-group">
+                <input type="number" name="regionSquare" required placeholder="Площадь региона">
+            </div>
+            <div class="form-group">
+                <input type="number" name="regionPrice" required placeholder="Цена региона">
+            </div>
+            <h3>Выберите услуги (можно и позже)</h3>
+            <div class="form-check">
+                <input type="checkbox"> <label for="asd">АСД</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox"> <label for="asd">АСД</label>
+            </div>
+            <div class="btn-wrapper">
+                <input type="submit" value="Добавить в каталог" class="btn btn-primary">
+            </div>
+        </form>
+        <table class="adminTable">
+            <tr>
+                <th>ID региона</th>
+                <th>Фото региона</th>
+                <th>Имя региона</th>
+                <th>Площадь региона</th>
+                <th>Цена региона</th>
+                <th>Действия</th>
+            </tr>
+            <tr>
+                <td>99a82ce4-59ca-44c2-8478-9205ed54c293</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta </td>
+                <td>Запад</td>
+                <td>850</td>
+                <td>456000</td>
+                <td>
+                    <div class="adminActions">
+                        <a href="">Детали</a>
+                        <a href="">Редактировать</a><a href="">Удалить</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+﻿@{
+	Layout = "_Edit";
+}
+@model TerraMars.Data.Entities.Service
+<h2>Редактирование услуги</h2>
+@using(Html.BeginForm()){
+	<div class="adminEdit">
+		<label>Название услуги</label>
+		@Html.EditorFor(m => m.Title)
+	</div>
+	<div class="adminEdit">
+		<label></label>
+		@Html.EditorFor(m => m.Price)
+	</div>
+	<div><input type="submit" value="Сохранить изменения" /></div>
+}
