@@ -1,111 +1,30 @@
 ﻿@{
     Layout = "_Layout";
 }
+@model AllModels
 <section class="section section--dark news">
     <div class="container">
         <h1 class="news-title">Новости</h1>
         <div class="news-wrapper">
-        <div class="news-card">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="news-card__img">
-                    <img src="~/img/paper.jpg" alt="paper">
+            @foreach (var n in Model.News)
+           {
+               <div class="news-card">
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="news-card__img">
+                            <img src="@n.Photo" alt="paper">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 col-lg-9">
+                            <div class="news-card__info">
+                            <h2>@n.Title</h2>
+                            <p>@n.Content</p>
+                            <span class="readmore">Читать далее</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-8 col-lg-9">
-                    <div class="news-card__info">
-                    <h2>Заголовок новости</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit praesentium labore quos doloribus quam accusamus quae modi, dicta necessitatibus placeat, neque dolor, ad voluptatibus deleniti quisquam rem consequuntur suscipit corporis?
-                    Nulla optio totam amet sed pariatur inventore itaque! Temporibus soluta sapiente sed aperiam voluptatibus repudiandae non unde vel nihil dignissimos, ducimus tenetur quis tempora! Et nam facere dolor fugit qui!</p>
-                    <span class="readmore">Читать далее</span>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        <div class="news-card">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="news-card__img">
-                    <img src="~/img/paper.jpg" alt="paper">
-                    </div>
-                </div>
-                <div class="col-12 col-md-8 col-lg-9">
-                    <div class="news-card__info">
-                    <h2>Заголовок новости</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quisquam deserunt tempora totam eveniet vel harum ea corporis, placeat inventore, nihil debitis? Aperiam praesentium id in ratione, harum ipsa itaque.
-                    Dignissimos necessitatibus hic quaerat beatae consequuntur, a officiis porro? Dolorem consectetur aperiam officiis quaerat iusto quis omnis dignissimos iure, praesentium, nostrum vero tempora et nam, repellat placeat itaque modi similique.
-                    Id, asperiores tenetur ex nesciunt iste soluta sequi aspernatur necessitatibus quidem quisquam ipsa laudantium, suscipit molestiae fugiat hic quos vitae cum voluptates excepturi. Minima, placeat. Dolor enim reprehenderit accusantium ab!
-                    Ipsam eum atque blanditiis praesentium id necessitatibus harum! Repellat debitis quisquam quod ducimus sint facilis aperiam nesciunt minus exercitationem modi doloremque, quae amet eos aliquid. Minima fugiat mollitia perspiciatis impedit!</p>
-                    <span class="readmore">Читать далее</span>
-                    </div>
-                </div>
-            </div>
-        </div>   
-        <div class="news-card">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="news-card__img">
-                    <img src="~/img/paper.jpg" alt="paper">
-                    </div>
-                </div>
-                <div class="col-12 col-md-8 col-lg-9">
-                    <div class="news-card__info">
-                    <h2>Заголовок новости</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti modi asperiores repellendus quibusdam. Veritatis sequi quasi ullam eos incidunt, dolor fuga voluptatum quae perferendis vitae officiis, neque pariatur quisquam asperiores.
-                    Laborum fuga quae necessitatibus assumenda commodi eos, dolor blanditiis dicta! Dolor quas quam eum odio natus quis ipsum exercitationem aperiam architecto, dignissimos libero numquam. Dicta velit necessitatibus quaerat tempore atque.
-                    Enim, quam, blanditiis exercitationem culpa fugit distinctio quae et vel fugiat error laudantium animi natus tempore quidem. Rerum eaque tenetur inventore nemo sapiente aperiam laudantium, facilis esse placeat dolor dolore.
-                    Omnis, consectetur quam nihil voluptas quas ex eligendi explicabo laboriosam perspiciatis. Rerum voluptas magnam pariatur error consequuntur dolores inventore temporibus quod obcaecati laborum alias nemo, asperiores corporis doloremque voluptatem voluptates!
-                    Assumenda quidem ab, aperiam quas doloremque ad tempore quam. Aspernatur delectus ad cum velit in at atque, laborum, laudantium similique vitae sint quos, nulla hic dolore. Ducimus sit aut vel.
-                    Fuga ipsam accusantium veniam eius magnam ab cum harum voluptates, repellendus dignissimos debitis iusto velit ea amet minima, non blanditiis distinctio natus quae, ducimus consequuntur animi suscipit consequatur? Assumenda, illo!
-                    Ipsa, at fugiat, dolore voluptatibus molestiae nemo sed nam blanditiis pariatur aperiam delectus quasi minus cumque distinctio eum quae quam culpa dolorum vitae, iusto suscipit natus. Vitae in suscipit soluta?
-                    Mollitia voluptatum dicta praesentium, ipsum aut neque cum laudantium voluptates sequi non exercitationem quam incidunt quos alias odio fugit quod eaque modi possimus minima atque repellat? Voluptas consequuntur laudantium dignissimos!</p>
-                    <span class="readmore">Читать далее</span>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        <div class="news-card">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="news-card__img">
-                    <img src="~/img/paper.jpg" alt="paper">
-                    </div>
-                </div>
-                <div class="col-12 col-md-8 col-lg-9">
-                    <div class="news-card__info">
-                    <h2>Заголовок новости</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit praesentium labore quos doloribus quam accusamus quae modi, dicta necessitatibus placeat, neque dolor, ad voluptatibus deleniti quisquam rem consequuntur suscipit corporis?
-                    Nulla optio totam amet sed pariatur inventore itaque! Temporibus soluta</p>
-                    <span class="readmore">Читать далее</span>
-                    </div>
-                </div>
-            </div>
-        </div>  
-        <div class="news-card">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="news-card__img">
-                    <img src="~/img/paper.jpg" alt="paper">
-                    </div>
-                </div>
-                <div class="col-12 col-md-8 col-lg-9">
-                    <div class="news-card__info">
-                    <h2>Заголовок новости</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit odio rerum perferendis beatae alias esse dolore cumque? Quasi maxime ipsum, excepturi voluptatibus ex in magni optio quaerat, voluptas reiciendis velit.
-                    Quo veritatis eius fugiat cum fuga laudantium cupiditate voluptate eligendi, aperiam aliquid distinctio exercitationem vero, deleniti voluptatem quaerat, id repudiandae. Minima expedita natus illo. Reprehenderit non vero nemo quasi perferendis?
-                    Explicabo aliquid soluta vero fugiat, quibusdam adipisci aut corporis non velit doloremque, ad iusto rerum dolor a itaque porro. A officia quam dolores velit, illo ipsam voluptatum quo soluta aperiam.
-                    Incidunt impedit quod, dolor sint consequuntur quasi perspiciatis earum iste corrupti quibusdam unde quo neque explicabo quis ab error facere sapiente sed doloribus praesentium corporis. Omnis odit iure quae dolores.
-                    Laudantium possimus soluta deleniti aperiam temporibus, non ut laborum beatae consectetur, dignissimos in autem totam quas eum! Illo blanditiis ipsum laboriosam ducimus natus temporibus neque nulla. Maxime optio non at.
-                    Maiores nostrum, excepturi, dolorum minus quae molestiae praesentium dolor, optio quaerat minima aspernatur. Libero, tenetur corporis voluptate excepturi odit harum aperiam voluptatum beatae, sint, rem sed dignissimos. Corrupti, aperiam deserunt.
-                    Cum placeat alias nihil laborum, quo culpa unde quae. Consectetur numquam a aliquam provident, impedit cupiditate? Possimus ipsam commodi praesentium beatae eligendi! Vero ex qui optio et perferendis, harum maxime.
-                    Quas, eveniet nemo nam ex debitis deserunt beatae quae facilis eum aliquid reprehenderit? Distinctio, in ex, repellendus incidunt atque animi laboriosam dicta eos nesciunt similique necessitatibus vel eligendi eaque consequuntur!
-                    Ex perferendis eaque cumque deleniti, minima iure quis ducimus molestias obcaecati qui commodi maiores facilis vero quas quasi expedita dolore dolores, illum iste, mollitia perspiciatis reprehenderit ab totam. Iste, quos?
-                    Commodi nisi temporibus, dolore repellendus repellat laboriosam eveniet sunt voluptates placeat reprehenderit rerum perspiciatis tempore! Iusto incidunt delectus possimus veniam beatae, maxime rerum suscipit officia dolore doloribus, facere laborum tempora?</p>
-                    <span class="readmore">Читать далее</span>
-                    </div>
-                </div>
-            </div>
-        </div> 
+                 </div>
+           }
         </div>
         <!-- /.news-wrapper -->
     </div>

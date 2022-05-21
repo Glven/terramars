@@ -2810,9 +2810,54 @@ body {
 }
 
 .adminEdit{
+    min-height: 100vh;
+    color: #fff;
+}
+.adminEdit h2{
+    padding: 20px 0;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Yeseva One', cursive;
+}
+.adminEdit-group{
     display: flex;
     flex-direction: column;
+    width: 20%;
+}
+.adminEdit-group label{
+    margin-bottom: 5px;
+    font-family: 'Futura Demi', sans-serif;
     font-size: 16px;
+}
+.adminEdit-group input{
+    margin-bottom: 20px;
+    padding: 10px 17px;
+    color: #fff;
+    background: transparent;
+    box-shadow: 0 0 5px #fff;
+    border-radius: 5px;
+}
+.details{
+    min-height: 100vh;
+    padding: 50px 0;
+}
+.details .details-photo{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.details h2{
+    margin: 10px 0;
+    font-size: 40px;
+    font-family: 'Yeseva One', cursive;
+    color: #EA003D;
+}
+.details p{
+    font-size: 16px;
+    font-family: 'Futura Demi', sans-serif;
+    color: #fff;
 }
 
 .adminHeader {
@@ -2917,7 +2962,7 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border-right: 2px solid #100E19;
+  border-right: 2px solid #fff;
 }
 .adminActions a:last-child {
   border-right: none;
@@ -3014,6 +3059,11 @@ body {
 .adminNews, .adminEmployees, .feedbacks, .adminReviews, .adminRegions, .adminServices, .users, .adminOffices {
   padding: 5rem 0;
   min-height: 100vh;
+}
+
+.calculate .calculate-services .serviceName::after{
+    display: none;
+    content: "";
 }
 
 @media (max-width: 991px) {

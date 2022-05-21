@@ -1,27 +1,23 @@
 ﻿@{
 	Layout = "_Edit";
 }
-@model TerraMars.Data.Entities.Employee
+@model TerraMars.Data.Entities.New
 
 <section class="adminEdit section--dark">
 	<div class="container">
-		<h2>Редактирование услуги @Html.DisplayTextFor(m => m.Id)</h2>
+		<h2>Редактирование новости @Html.DisplayTextFor(m => m.Id)</h2>
 		@using(Html.BeginForm()){
 			<div class="adminEdit-group">
-				<label>Фото</label>
+				<label>Фото новости</label>
 				@Html.EditorFor(m => m.Photo)
 			</div>
 			<div class="adminEdit-group">
-				<label>ФИО</label>
-				@Html.EditorFor(m => m.Fullname)
+				<label>Заголовок новости</label>
+				@Html.EditorFor(m => m.Title)
 			</div>
 			<div class="adminEdit-group">
-				<label>Должность</label>
-				@Html.EditorFor(m => m.Post)
-			</div>
-			<div class="adminEdit-group">
-				<label>Стаж работы</label>
-				@Html.EditorFor(m => m.Experience)
+				<label>Контент новости</label>
+				@Html.EditorFor(m => m.Content)
 			</div>
 			<div><input type="submit" value="Сохранить изменения" class="btn btn-primary" /></div>
 		}

@@ -28,6 +28,7 @@
                 <th>Фото</th>
                 <th>ФИО</th>
                 <th>Должность</th>
+				<th>Стаж работы</th>
                 <th>Действия</th>
             </tr>
             @foreach (var e in Model.Employees)
@@ -37,6 +38,7 @@
 					<td>@e.Photo</td>
 					<td>@e.Fullname</td>
 					<td>@e.Post</td>
+					<td>@e.Experience</td>
 					<td>
 						<div class="adminActions">
 							<a href="editEmployee/@e.Id">Редактировать</a>

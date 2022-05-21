@@ -1,6 +1,7 @@
 ﻿@{
 	Layout = "_Admin";
 }
+@model AllModels
 <section class="feedbacks section--dark">
     <div class="container-fluid">
         <table class="adminTable">
@@ -11,13 +12,22 @@
                 <th>Почта</th>
                 <th>Действия</th>
             </tr>
-            <tr>
-                <td>99a82ce4-59ca-44c2-8478-9205ed54c293</td>
-                <td>Оганесян Тигран</td>
-                <td>+79299979794</td>
-                <td>t-oganesyan00@yandex.ru</td>
-                <td><div class="adminAction"><a href="">Детали</a><a href="">Удалить</a></div></td>
-            </tr>
+            @foreach (var f in Model.Feedbacks)
+           {
+               <tr>
+					<td>@f.Id</td>
+					<td>@f.Name</td>
+					<td>@f.Phone</td>
+					<td>@f.Mail</td>
+					<td>
+						<div class="adminActions">
+							<a href="detailsFeedback/@f.Id">Детали</a>
+							<a href="deleteFeedback/@f.Id">Удалить</a>
+                        </div>
+                    </td>
+               </tr>
+
+           }
         </table>
     </div>
 </section>

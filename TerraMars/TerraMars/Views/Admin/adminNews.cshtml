@@ -1,9 +1,10 @@
 ﻿@{
 	Layout = "_Admin";
 }
+@model AllModels
 <section class="adminNews section--dark">
     <div class="container-fluid">
-        <form method="post" class="formForAdmin formForNews">
+        <form method="post" class="formForAdmin formForNews" asp-action="createNew" asp-controller="Admin">
             <div class="form-group">
                 <input type="text" name="newsPhoto" required placeholder="Фото новости">
             </div>
@@ -24,14 +25,21 @@
                 <th>Заголовок новости</th>
                 <th>Действия</th>
             </tr>
-            <tr>
-                <td>99a82ce4-59ca-44c2-8478-9205ed54c293</td>
-                <td>akwodkowakeoakworiwaoirobiamoivmaoimvoiamwvoi</td>
-                <td>Скунс умер</td>
-                <td>
-                    <div class="adminActions"><a href="">Детали</a><a href="">Редактировать</a><a href="">Удалить</a></div>
-                </td>
-            </tr>
+            @foreach (var n in Model.News)
+           {
+               <tr>
+					<td>@n.Id</td>
+					<td>@n.Photo</td>
+					<td>@n.Title</td>
+					<td>
+						<div class="adminActions">
+							<a href="detailsNew/@n.Id">Детали</a>
+							<a href="editNew/@n.Id">Редактировать</a>
+							<a href="deleteNew/@n.Id">Удалить</a>
+                        </div>
+                    </td>
+               </tr>
+           }
         </table>
     </div>
 </section>

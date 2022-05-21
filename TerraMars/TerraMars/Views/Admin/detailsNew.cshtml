@@ -1,0 +1,13 @@
+﻿@{
+	Layout = "_Admin";
+}
+@model TerraMars.Data.Entities.New
+<div class="details section--dark">
+	<div class="container">
+	<div class="details-photo">
+		<img src="@Html.DisplayTextFor(m=>m.Photo)" alt="" />
+	</div>
+	<h2>@Html.DisplayTextFor(m => m.Title)</h2>
+	<p>@Html.DisplayTextFor(m=>m.Content)</p>
+</div>
+</div>

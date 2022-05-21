@@ -11,10 +11,35 @@ namespace TerraMars.Controllers
 {
     public class TerraMarsController : Controller
     {
+        private readonly IFeedback _feedbackManager;
+        public TerraMarsController(IFeedback feedbackManager)
+        {
+            _feedbackManager = feedbackManager;
+        }
+        [HttpGet]
+        public async Task<IActionResult> SameFeedback()
+        {
+            return View();
+        }
         [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Index(string guestName, string guestPhone, string guestMail, string guestMessage)
+        {
+            var db = new TerramarsContext();
+            var feedback = db.Feedbacks.FirstOrDefault(f => f.Name == guestName || f.Phone == guestPhone || f.Mail == guestMail);
+            if(feedback != null)
+            {
+                return RedirectToAction("SameFeedback");
+            }
+            else
+            {
+                await _feedbackManager.CreateFeedback(guestName, guestPhone, guestMail, guestMessage);
+                return RedirectToAction("Index");
+            }
         }
         [HttpGet]
         public async Task<IActionResult> Calculate()
@@ -32,7 +57,10 @@ namespace TerraMars.Controllers
         [HttpGet]
         public async Task<IActionResult> News()
         {
-            return View();
+            var db = new TerramarsContext();
+            var news = db.News.ToList();
+            var model = new AllModels { News = news };
+            return View(model);
         }
         [HttpGet]
         public async Task<IActionResult> Reviews()

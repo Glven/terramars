@@ -29,6 +29,8 @@ namespace TerraMars
             services.AddDbContext<TerramarsContext>();
             services.AddTransient<IEmployee, EmployeesRepository>();
             services.AddTransient<IService, ServicesRepository>();
+            services.AddTransient<INew, NewsRepository>();
+            services.AddTransient<IFeedback, FeedbacksRepository>();
             services.AddMvc();
             services.AddControllersWithViews()
                 // вставляем совместимость с asd.net core 3.0

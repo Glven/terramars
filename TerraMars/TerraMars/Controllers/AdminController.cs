@@ -13,10 +13,14 @@ namespace TerraMars.Controllers
     {
         private readonly IEmployee _employeeManager;
         private readonly IService _serviceManager;
-        public AdminController(IEmployee employeeManager, IService serviceManager)
+        private readonly INew _newManager;
+        private readonly IFeedback _feedbackManager;
+        public AdminController(IEmployee employeeManager, IService serviceManager, INew newManager, IFeedback feedbackManager)
         {
             _employeeManager = employeeManager;
             _serviceManager = serviceManager;
+            _newManager = newManager;
+            _feedbackManager = feedbackManager;
         }
 
         [HttpGet]
@@ -99,22 +103,107 @@ namespace TerraMars.Controllers
         // конец действий с услугами
 
 
-
+        // начало действий с новостями
         [HttpGet]
-        public async Task<IActionResult> adminNews()
+        public async Task<IActionResult> SameNew()
         {
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> NullNew()
+        {
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> adminNews()
+        {
+            var db = new TerramarsContext();
+            var news = db.News.ToList();
+            var model = new AllModels { News = news };
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> deleteNew(Guid Id)
+        {
+            await _newManager.DeleteNew(Id);
+            return RedirectToAction("adminNews");
+        }
+        [HttpGet]
+        public async Task<IActionResult> editNew(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var news = db.News.FirstOrDefault(n => n.Id == Id);
+            return View(news);
+        }
+        [HttpGet]
+        public async Task<IActionResult> detailsNew(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var news = db.News.FirstOrDefault(n => n.Id == Id);
+            return View(news);
+        }
+        [HttpPost]
+        public async Task<IActionResult> editNew(New News)
+        {
+            if (News.Photo != null && News.Title != null && News.Content != null)
+            {
+                await _newManager.EditNew(News);
+            }
+            else
+            {
+                return RedirectToAction("NullNew");
+            }
+            return RedirectToAction("adminNews");
+        }
+        [HttpPost]
+        public async Task<IActionResult> createNew(string newsPhoto, string newsTitle, string newsContent)
+        {
+            var db = new TerramarsContext();
+            var news = db.News.FirstOrDefault(n => n.Title == newsTitle || n.Content == newsContent);
+            if(news != null)
+            {
+                return RedirectToAction("SameNew");
+            }
+            else
+            {
+                await _newManager.CreateNew(newsPhoto, newsTitle, newsContent);
+                return RedirectToAction("adminNews");
+            }
+        }
+        // конец действий с новостями
+        
+
         [HttpGet]
         public async Task<IActionResult> adminReviews()
         {
             return View();
         }
+
+
+        // начало действий с заявками
         [HttpGet]
         public async Task<IActionResult> adminFeedbacks()
         {
-            return View();
+            var db = new TerramarsContext();
+            var feebacks = db.Feedbacks.ToList();
+            var model = new AllModels { Feedbacks = feebacks };
+            return View(model);
         }
+        [HttpGet]
+        public async Task<IActionResult> detailsFeedback(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var feedback = db.Feedbacks.FirstOrDefault(f => f.Id == Id);
+            return View(feedback);
+        }
+        [HttpGet]
+        public async Task<IActionResult> deleteFeedback(Guid Id)
+        {
+            await _feedbackManager.DeleteFeedback(Id);
+            return RedirectToAction("adminFeedbacks");
+        }
+        // конец действий с заявками
+
 
 
         // начало действий с сотрудниками

@@ -1,0 +1,13 @@
+﻿@{
+	Layout = "_Admin";
+}
+@model TerraMars.Data.Entities.Feedback
+<div class="details section--dark">
+	<div class="container">
+	<h2>Заявка № @Html.DisplayTextFor(m => m.Id)</h2>
+	<h2>@Html.DisplayTextFor(m => m.Name)</h2>
+	<h2>@Html.DisplayTextFor(m => m.Phone)</h2>
+	<h2>@Html.DisplayTextFor(m => m.Mail)</h2>
+	<p>@Html.DisplayTextFor(m=>m.Message)</p>
+</div>
+</div>

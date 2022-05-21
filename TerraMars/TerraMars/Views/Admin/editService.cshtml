@@ -2,15 +2,19 @@
 	Layout = "_Edit";
 }
 @model TerraMars.Data.Entities.Service
-<h2>Редактирование услуги</h2>
-@using(Html.BeginForm()){
-	<div class="adminEdit">
-		<label>Название услуги</label>
-		@Html.EditorFor(m => m.Title)
+<section class="adminEdit section--dark">
+	<div class="container">
+		<h2>Редактирование услуги @Html.DisplayTextFor(m => m.Id)</h2>
+		@using(Html.BeginForm()){
+			<div class="adminEdit-group">
+				<label>Название услуги</label>
+				@Html.EditorFor(m => m.Title)
+			</div>
+			<div class="adminEdit-group">
+				<label>Цена услуги</label>
+				@Html.EditorFor(m => m.Price)
+			</div>
+			<div><input type="submit" value="Сохранить изменения" class="btn btn-primary" /></div>
+		}
 	</div>
-	<div class="adminEdit">
-		<label></label>
-		@Html.EditorFor(m => m.Price)
-	</div>
-	<div><input type="submit" value="Сохранить изменения" /></div>
-}
+</section>
