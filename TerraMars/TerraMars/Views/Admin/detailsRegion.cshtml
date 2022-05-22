@@ -1,0 +1,21 @@
+﻿@{
+	Layout = "_Admin";
+}
+@model TerraMars.Data.Entities.Region
+<div class="details section--dark">
+	<div class="container">
+	<div class="details-photo">
+		<img src="@Html.DisplayTextFor(m=>m.Photo)" alt="" />
+	</div>
+	<h2>Имя региона: @Html.DisplayTextFor(m => m.Name)</h2>
+	<p class="detailsSquare">Площадь региона: @Html.DisplayTextFor(m=>m.Square) км</p>
+	<p class="detailsPrice">Цена региона: @Html.DisplayTextFor(m=>m.Price)</p>
+	<h3>Услуги:</h3>
+	<ul>
+		@foreach (var s in Model.Services)
+	   {
+		   <li>@s.Title</li>
+	   }
+	</ul>
+</div>
+</div>

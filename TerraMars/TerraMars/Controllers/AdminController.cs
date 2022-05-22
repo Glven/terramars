@@ -6,6 +6,7 @@ using System.Linq;
 using TerraMars.Models;
 using System;
 using TerraMars.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace TerraMars.Controllers
 {
@@ -15,12 +16,16 @@ namespace TerraMars.Controllers
         private readonly IService _serviceManager;
         private readonly INew _newManager;
         private readonly IFeedback _feedbackManager;
-        public AdminController(IEmployee employeeManager, IService serviceManager, INew newManager, IFeedback feedbackManager)
+        private readonly IUser _userManager;
+        private readonly IRegion _regionManager;
+        public AdminController(IEmployee employeeManager, IService serviceManager, INew newManager, IFeedback feedbackManager, IUser userManager, IRegion regionManager)
         {
             _employeeManager = employeeManager;
             _serviceManager = serviceManager;
             _newManager = newManager;
             _feedbackManager = feedbackManager;
+            _userManager = userManager;
+            _regionManager = regionManager;
         }
 
         [HttpGet]
@@ -28,16 +33,87 @@ namespace TerraMars.Controllers
         {
             return View();
         }
+
+
+        // начало действий с пользователями
         [HttpGet]
         public async Task<IActionResult> adminUser()
+        {
+            var db = new TerramarsContext();
+            var users = db.Users.ToList();
+            var model = new AllModels { Users = users };
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> deleteUser(Guid Id)
+        {
+            await _userManager.DeleteUser(Id);
+            return RedirectToAction("adminUser");
+        }
+        // конец действий с пользователями
+
+
+        // начало действий с каталогом(регионами) многие ко многим
+        [HttpGet]
+        public async Task<IActionResult> SameRegion()
         {
             return View();
         }
         [HttpGet]
         public async Task<IActionResult> adminCatalog()
         {
-            return View();
+            var db = new TerramarsContext();
+            var regions = db.Regions.Include(s => s.Services).ToList();
+            var services = db.Services.ToList();
+            var model = new AllModels { Regions = regions, Services = services };
+            return View(model);
         }
+        [HttpGet]
+        public async Task<IActionResult> detailsRegion(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var region = db.Regions.Include(s => s.Services).FirstOrDefault(r => r.Id == Id);
+            return View(region);
+        }
+        [HttpGet]
+        public async Task<IActionResult> deleteRegion(Guid Id)
+        {
+            await _regionManager.DeleteRegion(Id);
+            return RedirectToAction("adminCatalog");
+        }
+        [HttpGet]
+        public async Task<IActionResult> editRegion(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var region = db.Regions.Include(s => s.Services).FirstOrDefault(r => r.Id == Id);
+            ViewBag.Services = db.Services.ToList();
+            return View(region);
+        }
+        [HttpPost]
+        public async Task<IActionResult> editRegion(Region region, Guid[] ServiceId)
+        {
+            if (region != null)
+            {
+                await _regionManager.EditRegion(region, ServiceId);
+            }
+            return RedirectToAction("adminCatalog");
+        }
+        [HttpPost]
+        public async Task<IActionResult> createCatalog(string regionPhoto, string regionName, ushort regionSquare, uint regionPrice, Guid[] ServiceId)
+        {
+            var db = new TerramarsContext();
+            var region = db.Regions.FirstOrDefault(r => r.Photo == regionPhoto || r.Name == regionName);
+            if(region != null)
+            {
+                return RedirectToAction("SameRegion");
+            }
+            else
+            {
+                await _regionManager.CreateRegion(regionPhoto, regionName, regionSquare, regionPrice, ServiceId);
+                return RedirectToAction("adminCatalog");
+            }
+        }
+        // конец действий с каталогом
 
 
         // начало действий с услугами

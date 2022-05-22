@@ -1,9 +1,10 @@
 ﻿@{
 	Layout = "_Admin";
 }
+@model AllModels
 <section class="adminRegions section--dark">
     <div class="container-fluid">
-        <form method="post" class="formForAdmin">
+        <form method="post" class="formForAdmin" asp-action="createCatalog" asp-controller="Admin">
             <h2>Добавить в каталог</h2>
             <div class="form-group">
                 <input type="text" name="regionPhoto" required placeholder="Добавьте ссылку на фото региона">
@@ -18,12 +19,12 @@
                 <input type="number" name="regionPrice" required placeholder="Цена региона">
             </div>
             <h3>Выберите услуги (можно и позже)</h3>
-            <div class="form-check">
-                <input type="checkbox"> <label for="asd">АСД</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox"> <label for="asd">АСД</label>
-            </div>
+            @foreach (var s in Model.Services)
+           {
+                <div class="form-check">
+                    <input type="checkbox" name="ServiceId" value="@s.Id" id="@s.Title"> <label for="@s.Title">@s.Title</label>
+                </div>
+           }
             <div class="btn-wrapper">
                 <input type="submit" value="Добавить в каталог" class="btn btn-primary">
             </div>
@@ -37,19 +38,23 @@
                 <th>Цена региона</th>
                 <th>Действия</th>
             </tr>
-            <tr>
-                <td>99a82ce4-59ca-44c2-8478-9205ed54c293</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta </td>
-                <td>Запад</td>
-                <td>850</td>
-                <td>456000</td>
-                <td>
-                    <div class="adminActions">
-                        <a href="">Детали</a>
-                        <a href="">Редактировать</a><a href="">Удалить</a>
-                    </div>
-                </td>
-            </tr>
+            @foreach (var r in Model.Regions)
+            {
+                <tr>
+					<td>@r.Id</td>
+					<td>@r.Photo</td>
+					<td>@r.Name</td>
+					<td>@r.Square</td>
+					<td>@r.Price</td>
+					<td>
+						<div class="adminActions">
+							<a href="detailsRegion/@r.Id">Детали</a>
+							<a href="editRegion/@r.Id">Редактировать</a>
+							<a href="deleteRegion/@r.Id">Удалить</a>
+                        </div>
+                    </td>
+                </tr>
+            }
         </table>
     </div>
 </section>

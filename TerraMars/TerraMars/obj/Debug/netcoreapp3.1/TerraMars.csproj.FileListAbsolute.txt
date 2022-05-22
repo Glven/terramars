@@ -113,3 +113,7 @@ D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SameE
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SameNew.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SameService.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\SameFeedback.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\SameUser.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\detailsRegion.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SameRegion.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\editRegion.cshtml.g.cs

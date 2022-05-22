@@ -12,9 +12,11 @@ namespace TerraMars.Controllers
     public class TerraMarsController : Controller
     {
         private readonly IFeedback _feedbackManager;
-        public TerraMarsController(IFeedback feedbackManager)
+        private readonly IUser _userManager;
+        public TerraMarsController(IFeedback feedbackManager, IUser userManager)
         {
             _feedbackManager = feedbackManager;
+            _userManager = userManager;
         }
         [HttpGet]
         public async Task<IActionResult> SameFeedback()
@@ -91,9 +93,29 @@ namespace TerraMars.Controllers
             return View();
         }
         [HttpGet]
+        public async Task<IActionResult> SameUser()
+        {
+            return View();
+        }
+        [HttpGet]
         public async Task<IActionResult> Signin()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Signin(string lastname, string name, string secondname, DateTime year, string sex, string mail, string username, string phone, string password)
+        {
+            var db = new TerramarsContext();
+            var user = db.Users.FirstOrDefault(u => (u.Lastname == lastname && u.Name == name && u.Secondname == secondname) || u.Mail == mail || u.Phone == phone);
+            if(user != null)
+            {
+                return RedirectToAction("SameUser");
+            }
+            else
+            {
+                await _userManager.CreateUser(lastname, name, secondname, year, sex, mail, username, phone, password);
+                return RedirectToAction("Index");
+            }
         }
         [HttpGet]
         public async Task<IActionResult> Login()

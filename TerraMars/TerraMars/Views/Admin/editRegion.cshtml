@@ -1,0 +1,38 @@
+﻿@{
+	Layout = "_Edit";
+}
+@model TerraMars.Data.Entities.Region
+
+<section class="adminEdit section--dark">
+	<div class="container">
+		<h2>Редактирование региона @Html.DisplayTextFor(m => m.Id)</h2>
+		@using(Html.BeginForm()){
+			<div class="adminEdit-group">
+				<label>Фото региона</label>
+				@Html.EditorFor(m => m.Photo)
+			</div>
+			<div class="adminEdit-group">
+				<label>Имя региона</label>
+				@Html.EditorFor(m => m.Name)
+			</div>
+			<div class="adminEdit-group">
+				<label>Площадь региона</label>
+				@Html.EditorFor(m => m.Square)
+			</div>
+			<div class="adminEdit-group">
+				<label>Цена региона</label>
+				@Html.EditorFor(m => m.Price)
+			</div>
+			<ul>
+				@foreach (var s in ViewBag.Services)
+			   {
+				   <li>
+						<input type="checkbox" id="@s.Title" name="ServiceId" value="@s.Id" @(Model.Services.Contains(s) ? "checked=\"checked\"" : "") />
+						<label for="@s.Title">@s.Title</label>
+				   </li>
+			   }
+			</ul>
+			<div><input type="submit" value="Сохранить изменения" class="btn btn-primary" /></div>
+		}
+	</div>
+</section>

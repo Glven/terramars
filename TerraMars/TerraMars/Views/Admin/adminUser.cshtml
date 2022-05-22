@@ -1,6 +1,7 @@
 ﻿@{
 	Layout = "_Admin";
 }
+@model AllModels
 <section class="users section--dark">
     <div class="container-fluid">
         <table class="adminTable">
@@ -15,17 +16,24 @@
                 <th>Пароль</th>
                 <th>Удаление</th>
             </tr>
-            <tr>
-                <td>99a82ce4-59ca-44c2-8478-9205ed54c293</td>
-                <td>Оганесян Тигран Ваагнович</td>
-                <td>Мужской</td>
-                <td>31.12.2000</td>
-                <td>t-oganesyan00@yandex.ru</td>
-                <td>+79299979794</td>
-                <td>Gloven</td>
-                <td>1565630t</td>
-                <td><a href="#">Удалить</a></td>
-            </tr>
+            @foreach (var u in Model.Users)
+           {
+               <tr>
+                   <td>@u.Id</td>
+					<td>@u.Lastname @u.Name @u.Secondname</td>
+					<td>@u.Sex</td>
+					<td>@u.Year.Day.@u.Year.Month.@u.Year.Year</td>
+					<td>@u.Mail</td>
+					<td>@u.Phone</td>
+					<td>@u.Username</td>
+					<td>@u.Password</td>
+					<td>
+						<div class="adminActions">
+							<a href="deleteUser/@u.Id">Удалить</a>
+                        </div>
+                    </td>
+               </tr>
+           }
         </table>
     </div>
     <!-- /.container -->
