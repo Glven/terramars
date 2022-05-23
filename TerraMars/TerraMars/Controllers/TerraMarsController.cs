@@ -6,6 +6,7 @@ using System.Linq;
 using TerraMars.Models;
 using System;
 using TerraMars.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace TerraMars.Controllers
 {
@@ -13,10 +14,14 @@ namespace TerraMars.Controllers
     {
         private readonly IFeedback _feedbackManager;
         private readonly IUser _userManager;
-        public TerraMarsController(IFeedback feedbackManager, IUser userManager)
+        private readonly IFavorite _favManager;
+        private readonly ICart _cartManager;
+        public TerraMarsController(IFeedback feedbackManager, IUser userManager, IFavorite favManager, ICart cartManager)
         {
             _feedbackManager = feedbackManager;
             _userManager = userManager;
+            _favManager = favManager;
+            _cartManager = cartManager;
         }
         [HttpGet]
         public async Task<IActionResult> SameFeedback()
@@ -54,7 +59,11 @@ namespace TerraMars.Controllers
         [HttpGet]
         public async Task<IActionResult> Catalog()
 		{
-            return View();
+            var db = new TerramarsContext();
+            var regions = db.Regions.Include(s => s.Services).ToList();
+            var services = db.Services.ToList();
+            var model = new AllModels { Services = services, Regions = regions };
+            return View(model);
 		}
         [HttpGet]
         public async Task<IActionResult> News()
@@ -80,17 +89,70 @@ namespace TerraMars.Controllers
         [HttpGet]
         public async Task<IActionResult> Offices()
         {
+            var db = new TerramarsContext();
+            var offices = db.Offices.Include(s => s.Schedules).ToList();
+            var schedules = db.Schedules.ToList();
+            var model = new AllModels { Offices = offices, Schedules = schedules };
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> SameFav()
+        {
             return View();
         }
         [HttpGet]
         public async Task<IActionResult> Favorites()
         {
-            return View();
+            var db = new TerramarsContext();
+            var regions = db.Regions.Include(s => s.Services).ToList();
+            var favs = db.Favorites.ToList();
+            var model = new AllModels { Regions = regions, Favorites = favs };
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> createFav(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var fav = db.Favorites.FirstOrDefault(f => f.Region.Id == Id);
+            if(fav != null)
+            {
+                return RedirectToAction("SameFav");
+            }
+            else
+            {
+                await _favManager.CreateFav(Id);
+                return RedirectToAction("Favorites");
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> deleteFav(Guid Id)
+        {
+            await _favManager.DeleteFav(Id);
+            return RedirectToAction("Favorites");
         }
         [HttpGet]
         public async Task<IActionResult> Cart()
         {
-            return View();
+            var db = new TerramarsContext();
+            var regions = db.Regions.Include(s => s.Services).ToList();
+            var carts = db.Carts.ToList();
+            var model = new AllModels { Regions = regions, Carts = carts };
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> createCart(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var cart = db.Carts.FirstOrDefault(c => c.Region.Id == Id);
+            if (cart != null)
+            {
+                return RedirectToAction("SameCart");
+            }
+            else
+            {
+                await _cartManager.CreateCart(Id);
+                return RedirectToAction("Cart");
+            }
         }
         [HttpGet]
         public async Task<IActionResult> SameUser()

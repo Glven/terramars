@@ -13,10 +13,10 @@
                 <input type="text" name="regionName" required placeholder="Имя региона">
             </div>
             <div class="form-group">
-                <input type="number" name="regionSquare" required placeholder="Площадь региона">
+                <input type="number" min="5" max="65535" name="regionSquare" required placeholder="Площадь региона">
             </div>
             <div class="form-group">
-                <input type="number" name="regionPrice" required placeholder="Цена региона">
+                <input type="number" min="1" max="4294967295" name="regionPrice" required placeholder="Цена региона">
             </div>
             <h3>Выберите услуги (можно и позже)</h3>
             @foreach (var s in Model.Services)

@@ -1,103 +1,47 @@
 ﻿@{
     Layout = "_Layout";
+    ViewBag.Title = "Каталог";
 }
+@model AllModels
 <section class="section section--dark catalog">
     <div class="container">
         <h1 class="catalog-title">Наш каталог</h1>
         <div class="catalog-wrapper">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="catalog-card">
-                    <div class="catalog-card__photo"><img src="~/img/catalog.jpg" alt="catalog"></div>
-                    <div class="catalog-card__info">
-                    <h2 class="catalog-card__name">Имя участка: <span>Запад</span></h2>
-                    <h3 class="catalog-card__square">Площадь участка: <span>850 км</span></h3>
-                    <p class="catalog-card__services">БД с услугами</p>
-                    <p class="catalog-card__price">Цена участка <span>250 000</span></p>
-                    </div>
-                    <div class="catalog-card__buttons">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <a href="#" class="catalog-card__btn catalog-card__fav">В избранное</a>
+            @foreach (var r in Model.Regions)
+           {
+               <div class="col-12 col-md-6 col-lg-4">
+                    <div class="catalog-card">
+                        <div class="catalog-card__photo"><img src="@r.Photo" alt="catalog"></div>
+                        <div class="catalog-card__info">
+                        <h2 class="catalog-card__name">Имя участка: <span>@r.Name</span></h2>
+                        <h3 class="catalog-card__square">Площадь участка: <span>@r.Square км</span></h3>
+                        @if(r.Services.Count != 0){
+                            <h3 class="catalog-card__serviceTitle">Услуги: </h3>
+                            <ul class="catalog-card__services">
+                                @foreach (var s in @r.Services)
+                               {
+                                   <li>@s.Title</li>
+                               }
+                            </ul>
+                        }
+                        <p class="catalog-card__price">Цена участка <span>@r.Price</span></p>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <a href="#" class="catalog-card__btn catalog-card__cart">В корзину</a>
+                        <div class="catalog-card__buttons">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <a href="createFav/@r.Id" class="catalog-card__btn catalog-card__fav">В избранное</a>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <a href="createCart/@r.Id" class="catalog-card__btn catalog-card__cart">В корзину</a>
+                            </div>
+                        </div>
                         </div>
                     </div>
-                    </div>
+                    <!-- /.catalog-card -->
                 </div>
-                <!-- /.catalog-card -->
-            </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="catalog-card">
-                    <div class="catalog-card__photo"><img src="~/img/catalog.jpg" alt="catalog"></div>
-                    <div class="catalog-card__info">
-                    <h2 class="catalog-card__name">Имя участка: <span>Запад</span></h2>
-                    <h3 class="catalog-card__square">Площадь участка: <span>850 км</span></h3>
-                    <p class="catalog-card__services">БД с услугами</p>
-                    <p class="catalog-card__price">Цена участка <span>250 000</span></p>
-                    </div>
-                    <div class="catalog-card__buttons">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <a href="#" class="catalog-card__btn catalog-card__fav">В избранное</a>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <a href="#" class="catalog-card__btn catalog-card__cart">В корзину</a>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <!-- /.catalog-card -->
-            </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="catalog-card">
-                    <div class="catalog-card__photo"><img src="~/img/catalog.jpg" alt="catalog"></div>
-                    <div class="catalog-card__info">
-                    <h2 class="catalog-card__name">Имя участка: <span>Запад</span></h2>
-                    <h3 class="catalog-card__square">Площадь участка: <span>850 км</span></h3>
-                    <p class="catalog-card__services">БД с услугами</p>
-                    <p class="catalog-card__price">Цена участка <span>250 000</span></p>
-                    </div>
-                    <div class="catalog-card__buttons">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <a href="#" class="catalog-card__btn catalog-card__fav">В избранное</a>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <a href="#" class="catalog-card__btn catalog-card__cart">В корзину</a>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <!-- /.catalog-card -->
-            </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="catalog-card">
-                    <div class="catalog-card__photo"><img src="~/img/catalog.jpg" alt="catalog"></div>
-                    <div class="catalog-card__info">
-                    <h2 class="catalog-card__name">Имя участка: <span>Запад</span></h2>
-                    <h3 class="catalog-card__square">Площадь участка: <span>850 км</span></h3>
-                    <p class="catalog-card__services">БД с услугами</p>
-                    <p class="catalog-card__price">Цена участка <span>250 000</span></p>
-                    </div>
-                    <div class="catalog-card__buttons">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <a href="#" class="catalog-card__btn catalog-card__fav">В избранное</a>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <a href="#" class="catalog-card__btn catalog-card__cart">В корзину</a>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <!-- /.catalog-card -->
-            </div>
-            <!-- /.col-lg-4 -->
+                <!-- /.col-lg-4 -->
+           }
         </div>
         <!-- /.row -->
         </div>

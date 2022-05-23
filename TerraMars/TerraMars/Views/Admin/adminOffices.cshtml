@@ -1,9 +1,10 @@
 ﻿@{
 	Layout = "_Admin";
 }
+@model AllModels
 <section class="adminOffices section--dark">
     <div class="container-fluid">
-        <form method="post" class="formForAdmin">
+        <form method="post" class="formForAdmin" asp-action="createSchedule" asp-controller="Admin">
             <h2>Добавление дня</h2>
             <div class="form-group">
                 <input type="text" name="scheduleDay" placeholder="День работы" required>
@@ -21,18 +22,22 @@
                 <th>Время работы</th>
                 <th>Действия</th>
             </tr>
-            <tr>
-                <td>Понедельник</td>
-                <td>8:00 - 21:00</td>
-                <td><div class="adminActions"><a href="">Редактировать</a><a href="">Удалить</a></div></td>
-            </tr>
-            <tr>
-                <td>Воскресенье</td>
-                <td>Выходной</td>
-                <td><div class="adminActions"><a href="">Редактировать</a><a href="">Удалить</a></div></td>
-            </tr>
+            @foreach (var t in Model.Schedules)
+           {
+               <tr>
+                   <td>@t.Day</td>
+					<td>@t.Time</td>
+					<td>
+						<div class="adminActions">
+							<a href="editSchedule/@t.Id">Редактировать</a>
+							<a href="deleteSchedule/@t.Id">Удалить</a>
+                        </div>
+                    </td>
+               </tr>
+
+           }
         </table>
-        <form method="post" class="formForAdmin">
+        <form method="post" class="formForAdmin" asp-action="createOffice" asp-controller="Admin">
             <h2>Добавление нового офиса</h2>
             <div class="form-group">
                 <input type="text" name="officeAddress" required placeholder="Адрес офиса">
@@ -43,12 +48,13 @@
             <div class="form-group">
                 <input type="text" name="officePhone" placeholder="Введите телефон офиса" required>
             </div>
-            <div class="form-check">
-                <input type="checkbox"> <label for="">asd</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox"> <label for="">asd</label>
-            </div>
+			<h3>Выберите дни и время работы</h3>
+            @foreach (var t in Model.Schedules)
+           {
+                <div class="form-check">
+                    <input type="checkbox" name="ScheduleId" value="@t.Id" id="@t.Id" /> <label for="@t.Id">@t.Day @t.Time</label>
+                </div>
+           }
             <div class="btn-wrapper">
                 <input type="submit" class="btn btn-primary" value="Добавить офис">
             </div>
@@ -60,12 +66,21 @@
                 <th>Телефон офиса</th>
                 <th>Действия</th>
             </tr>
-            <tr>
-                <td>99a82ce4-59ca-44c2-8478-9205ed54c293</td>
-                <td>Улица Пушкина, дом хуйлушкина</td>
-                <td>8 880 555 35 35</td>
-                <td><div class="adminActions"><a href="">Детали</a><a href="">Редактировать</a><a href="">Удалить</a></div></td>
-            </tr>
+            @foreach (var o in Model.Offices)
+           {
+               <tr>
+					<td>@o.Id</td>
+					<td>@o.Address</td>
+					<td>@o.Phone</td>
+					<td>
+						<div class="adminActions">
+							<a href="detailsOffice/@o.Id">Детали</a>
+							<a href="editOffice/@o.Id">Редактировать</a>
+							<a href="deleteOffice/@o.Id">Удалить</a>
+                        </div>
+                    </td>
+               </tr>
+           }
         </table>
     </div>
 </section>

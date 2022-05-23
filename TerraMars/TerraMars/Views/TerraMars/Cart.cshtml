@@ -1,6 +1,8 @@
 ﻿@{
     Layout = "_Layout";
+    ViewBag.Title = "Корзина";
 }
+@model AllModels
 <section class="section section--dark cart">
     <div class="container">
         <div class="cart-wrapper">
@@ -10,12 +12,15 @@
             <p class="table">Площадь участка</p>
             <span class="table">Цена участка</span>
         </div>
-        <div class="cart-card">
-            <h2 class="cart-card__elem cart-card__number">936DA01F-9ABD-4d9d-80C7-02AF85C822A8</h2>
-            <p class="cart-card__elem cart-card__name">Запад</p>
-            <p class="cart-card__elem cart-card__square">850 км</p>
-            <span class="cart-card__elem cart-card__price">250 000</span>
+        @foreach (var c in Model.Carts)
+       {
+          <div class="cart-card">
+            <h2 class="cart-card__elem cart-card__number">@c.Id</h2>
+            <p class="cart-card__elem cart-card__name">@c.Region.Name</p>
+            <p class="cart-card__elem cart-card__square">@c.Region.Square км</p>
+            <span class="cart-card__elem cart-card__price">@c.Region.Price</span>
         </div>
+       }
         </div>
         <!-- /.cart-wrapper -->
         <a href="#" class="btn btn-primary cart-btn">Купить</a>

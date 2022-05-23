@@ -10,8 +10,8 @@ namespace TerraMars.Models.Interfaces
 	public interface IOffice
 	{
 		Task<IList<Office>> AllOfices();
-		Task CreateOffice(string Address, string Description, string Phone, string Schedule);
+		Task CreateOffice(string Address, string Description, string Phone, Guid[] ScheduleId);
 		Task DeleteOffice(Guid OfficeId);
-		Task EditOffice(Office office);
+		Task EditOffice(Office office, Guid[] ScheduleId);
 	}
 }

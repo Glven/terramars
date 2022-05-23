@@ -1804,7 +1804,12 @@ h1, h2, h3, h4, h5, h6 {
 .favorites-card__services {
   margin-bottom: 1rem;
   font-size: 16px;
-  color: #fff;
+  color: #EA003D;
+}
+.favorites-card li{
+    margin: 4px 0;
+    font-size: 14px;
+    color: #fff;
 }
 .favorites-card__price {
   margin-bottom: 1rem;
@@ -2178,6 +2183,12 @@ body {
   margin-left: 2px;
   content: "2";
   font-size: 12px;
+}
+.catalog-card__serviceTitle{
+    margin: 5px 0;
+    font-size: 18px;
+    color: #EA003D;
+    font-family: 'Yeseva One', cursive;
 }
 .catalog-card__services {
   margin-bottom: 1rem;
@@ -2604,7 +2615,14 @@ body {
   line-height: 20px;
 }
 .offices-card__schedule {
-  font-size: 14px;
+  font-size: 20px;
+  color: #EA003D;
+}
+
+.offices-card ul li{
+    margin: 4px 0;
+    font-size: 14px !important;
+    color: #fff;
 }
 
 .footer {
@@ -2812,6 +2830,14 @@ body {
 .adminEdit{
     min-height: 100vh;
     color: #fff;
+}
+.adminEdit ul{
+    margin: 10px 0;
+    font-size: 16px;
+}
+.adminEdit ul li{
+    display: flex;
+    align-items: center;
 }
 .adminEdit h2{
     padding: 20px 0;

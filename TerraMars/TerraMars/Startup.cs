@@ -33,6 +33,10 @@ namespace TerraMars
             services.AddTransient<IFeedback, FeedbacksRepository>();
             services.AddTransient<IUser, UsersRepository>();
             services.AddTransient<IRegion, RegionsRepository>();
+            services.AddTransient<ISchedule, SchedulesRepository>();
+            services.AddTransient<IOffice, OfficesRepository>();
+            services.AddTransient<IFavorite, FavoritesRepository>();
+            services.AddTransient<ICart, CartsRepository>();
             services.AddMvc();
             services.AddControllersWithViews()
                 // вставляем совместимость с asd.net core 3.0

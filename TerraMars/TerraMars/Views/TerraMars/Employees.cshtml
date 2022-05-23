@@ -1,5 +1,6 @@
 ﻿@{
     Layout = "_Layout";
+    ViewBag.Title = "Сотрудники";
 }
 @model AllModels
 <section class="section section--dark employees">
@@ -15,8 +16,19 @@
                         <div class="employees-card__info">
                         <h2>@e.Fullname</h2>
                         <h3>@e.Post</h3>
-                        <span>C нами @e.Experience лет</span>
-                        </div>
+                        @if(@e.Experience % 10 == 1)
+                        {
+                              <span>C нами @e.Experience год</span>      
+                        }
+                        else if(@e.Experience % 10 == 2 || @e.Experience % 10 == 3 || @e.Experience % 10 == 4)
+                        {
+                                    <span>C нами @e.Experience года</span>
+                        }
+                        else
+                        {
+                            <span>C нами @e.Experience лет</span>
+                        }
+                         </div>
                     </div>
                 </div>
             }

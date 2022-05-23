@@ -98,9 +98,6 @@ D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\admin
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\adminServices.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\adminUser.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Edit.cshtml.g.cs
-D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\deleteEmployee.cshtml.g.cs
-D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\deleteFeedback.cshtml.g.cs
-D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\deleteNew.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\detailsFeedback.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\detailsNew.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\editEmployee.cshtml.g.cs
@@ -117,3 +114,14 @@ D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\S
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\detailsRegion.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SameRegion.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\editRegion.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\NullRegion.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\editSchedule.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\NullSchedule.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SameSchedule.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\detailsOffice.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\NullOffice.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\OfficeError.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SameOffice.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\editOffice.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Null.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\SameFav.cshtml.g.cs

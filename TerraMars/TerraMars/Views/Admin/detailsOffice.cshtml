@@ -1,0 +1,21 @@
+﻿@{
+	Layout = "_Admin";
+}
+@model TerraMars.Data.Entities.Office
+<div class="details section--dark">
+	<div class="container">
+	<h2>Адрес офиса: @Html.DisplayTextFor(m => m.Address)</h2>
+		@if(Model.Description != null)
+		{
+			<p class="detailsSquare">Дополнительная информация: <br /> @Html.DisplayTextFor(m=>m.Description) км</p>
+		}
+		<p class="detailsPrice">Номер офиса: @Html.DisplayTextFor(m=>m.Phone)</p>
+	<h3>Дни работы:</h3>
+	<ul>
+		@foreach (var s in Model.Schedules)
+	   {
+		   <li>@s.Day @s.Time</li>
+	   }
+	</ul>
+</div>
+</div>

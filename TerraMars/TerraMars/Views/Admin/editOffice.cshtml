@@ -1,0 +1,34 @@
+﻿@{
+	Layout = "_Edit";
+}
+@model TerraMars.Data.Entities.Office
+
+<section class="adminEdit section--dark">
+	<div class="container">
+		<h2>Редактирование офиса @Html.DisplayTextFor(m => m.Id)</h2>
+		@using(Html.BeginForm()){
+			<div class="adminEdit-group">
+				<label>Адрес офиса</label>
+				@Html.EditorFor(m => m.Address)
+			</div>
+			<div class="adminEdit-group">
+				<label>Описание офиса</label>
+				@Html.EditorFor(m => m.Description)
+			</div>
+			<div class="adminEdit-group">
+				<label>Телефон офиса</label>
+				@Html.EditorFor(m => m.Phone)
+			</div>
+			<ul>
+				@foreach (var s in ViewBag.Schedules)
+			   {
+				   <li>
+						<input type="checkbox" id="@s.Id" name="ScheduleId" value="@s.Id" @(Model.Schedules.Contains(s) ? "checked=\"checked\"" : "") />
+						<label for="@s.Id">@s.Day @s.Time</label>
+				   </li>
+			   }
+			</ul>
+			<div><input type="submit" value="Сохранить изменения" class="btn btn-primary" /></div>
+		}
+	</div>
+</section>

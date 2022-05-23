@@ -1,0 +1,20 @@
+﻿@{
+	Layout = "_Edit";
+}
+@model TerraMars.Data.Entities.Schedule
+<section class="adminEdit section--dark">
+	<div class="container">
+		<h2>Редактирование расписания @Html.DisplayTextFor(m => m.Id)</h2>
+		@using(Html.BeginForm()){
+			<div class="adminEdit-group">
+				<label>День</label>
+				@Html.EditorFor(m => m.Day)
+			</div>
+			<div class="adminEdit-group">
+				<label>Время</label>
+				@Html.EditorFor(m => m.Time)
+			</div>
+			<div><input type="submit" value="Сохранить изменения" class="btn btn-primary" /></div>
+		}
+	</div>
+</section>

@@ -16,5 +16,7 @@ namespace TerraMars.Data.Entities
 		public ushort Square { get; set; }
 		public uint Price { get; set; }
 		public virtual IList<Service> Services { get; set; } = new List<Service>();
+		public Favorite Favorite { get; set; }
+		public Cart Cart { get; set; }
 	}
 }

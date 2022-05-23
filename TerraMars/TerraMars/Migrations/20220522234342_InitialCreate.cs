@@ -130,36 +130,34 @@ namespace TerraMars.Migrations
                 name: "Carts",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RegionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Carts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Carts_Regions_RegionId",
-                        column: x => x.RegionId,
+                        name: "FK_Carts_Regions_Id",
+                        column: x => x.Id,
                         principalTable: "Regions",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Favorites",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RegionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Favorites", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Favorites_Regions_RegionId",
-                        column: x => x.RegionId,
+                        name: "FK_Favorites_Regions_Id",
+                        column: x => x.Id,
                         principalTable: "Regions",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -229,16 +227,6 @@ namespace TerraMars.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Carts_RegionId",
-                table: "Carts",
-                column: "RegionId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Favorites_RegionId",
-                table: "Favorites",
-                column: "RegionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OfficeSchedule_SchedulesId",

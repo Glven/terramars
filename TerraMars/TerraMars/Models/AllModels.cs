@@ -10,7 +10,7 @@ namespace TerraMars.Models
     public class AllModels
     {
         public IEnumerable<Cart> Carts { get; set; }
-        public IEnumerable<Favorite> Favorits { get; set; }
+        public IEnumerable<Favorite> Favorites { get; set; }
         public IEnumerable<Employee> Employees { get; set; }
         public IEnumerable<Feedback> Feedbacks {  get; set; }
         public IEnumerable<New> News { get; set; }

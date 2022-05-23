@@ -52,15 +52,9 @@ namespace TerraMars.Migrations
             modelBuilder.Entity("TerraMars.Data.Entities.Cart", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("RegionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RegionId");
 
                     b.ToTable("Carts");
                 });
@@ -91,15 +85,9 @@ namespace TerraMars.Migrations
             modelBuilder.Entity("TerraMars.Data.Entities.Favorite", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("RegionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RegionId");
 
                     b.ToTable("Favorites");
                 });
@@ -314,8 +302,10 @@ namespace TerraMars.Migrations
             modelBuilder.Entity("TerraMars.Data.Entities.Cart", b =>
                 {
                     b.HasOne("TerraMars.Data.Entities.Region", "Region")
-                        .WithMany()
-                        .HasForeignKey("RegionId");
+                        .WithOne("Cart")
+                        .HasForeignKey("TerraMars.Data.Entities.Cart", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Region");
                 });
@@ -323,8 +313,10 @@ namespace TerraMars.Migrations
             modelBuilder.Entity("TerraMars.Data.Entities.Favorite", b =>
                 {
                     b.HasOne("TerraMars.Data.Entities.Region", "Region")
-                        .WithMany()
-                        .HasForeignKey("RegionId");
+                        .WithOne("Favorite")
+                        .HasForeignKey("TerraMars.Data.Entities.Favorite", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Region");
                 });
@@ -338,6 +330,13 @@ namespace TerraMars.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TerraMars.Data.Entities.Region", b =>
+                {
+                    b.Navigation("Cart");
+
+                    b.Navigation("Favorite");
                 });
 
             modelBuilder.Entity("TerraMars.Data.Entities.User", b =>

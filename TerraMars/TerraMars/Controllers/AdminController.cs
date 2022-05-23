@@ -18,7 +18,9 @@ namespace TerraMars.Controllers
         private readonly IFeedback _feedbackManager;
         private readonly IUser _userManager;
         private readonly IRegion _regionManager;
-        public AdminController(IEmployee employeeManager, IService serviceManager, INew newManager, IFeedback feedbackManager, IUser userManager, IRegion regionManager)
+        private readonly ISchedule _scheduleManager;
+        private readonly IOffice _officeManager;
+        public AdminController(IEmployee employeeManager, IService serviceManager, INew newManager, IFeedback feedbackManager, IUser userManager, IRegion regionManager, ISchedule scheduleManager, IOffice officeManager)
         {
             _employeeManager = employeeManager;
             _serviceManager = serviceManager;
@@ -26,6 +28,14 @@ namespace TerraMars.Controllers
             _feedbackManager = feedbackManager;
             _userManager = userManager;
             _regionManager = regionManager;
+            _scheduleManager = scheduleManager;
+            _officeManager = officeManager;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Null()
+        {
+            return View();
         }
 
         [HttpGet]
@@ -92,11 +102,15 @@ namespace TerraMars.Controllers
         [HttpPost]
         public async Task<IActionResult> editRegion(Region region, Guid[] ServiceId)
         {
-            if (region != null)
+            if (region.Photo != null && region.Name != null && region.Square != 0 && region.Price != 0)
             {
                 await _regionManager.EditRegion(region, ServiceId);
+                return RedirectToAction("adminCatalog");
             }
-            return RedirectToAction("adminCatalog");
+            else
+            {
+                return RedirectToAction("Null");
+            }
         }
         [HttpPost]
         public async Task<IActionResult> createCatalog(string regionPhoto, string regionName, ushort regionSquare, uint regionPrice, Guid[] ServiceId)
@@ -119,11 +133,6 @@ namespace TerraMars.Controllers
         // начало действий с услугами
         [HttpGet]
         public async Task<IActionResult> SameService()
-        {
-            return View();
-        }
-        [HttpGet]
-        public async Task<IActionResult> NullService()
         {
             return View();
         }
@@ -173,7 +182,7 @@ namespace TerraMars.Controllers
             }
             else
             {
-                return RedirectToAction("NullService");
+                return RedirectToAction("Null");
             }
         }
         // конец действий с услугами
@@ -182,11 +191,6 @@ namespace TerraMars.Controllers
         // начало действий с новостями
         [HttpGet]
         public async Task<IActionResult> SameNew()
-        {
-            return View();
-        }
-        [HttpGet]
-        public async Task<IActionResult> NullNew()
         {
             return View();
         }
@@ -227,7 +231,7 @@ namespace TerraMars.Controllers
             }
             else
             {
-                return RedirectToAction("NullNew");
+                return RedirectToAction("Null");
             }
             return RedirectToAction("adminNews");
         }
@@ -284,11 +288,6 @@ namespace TerraMars.Controllers
 
         // начало действий с сотрудниками
         [HttpGet]
-        public async Task<IActionResult> NullEmployee()
-        {
-            return View();
-        }
-        [HttpGet]
         public async Task<IActionResult> SameEmployee()
         {
             return View();
@@ -305,7 +304,7 @@ namespace TerraMars.Controllers
         public async Task<IActionResult> createEmployee(string employeePhoto, string employeeName, string employeePost, ushort employeeExperience)
         {
             var db = new TerramarsContext();
-            var employee = db.Employees.FirstOrDefault(e => e.Fullname == employeeName);
+            var employee = db.Employees.FirstOrDefault(e => e.Photo == employeePhoto || e.Fullname == employeeName);
             if(employee != null)
             {
                 return RedirectToAction("SameEmployee");
@@ -339,16 +338,134 @@ namespace TerraMars.Controllers
             }
             else
             {
-                return RedirectToAction("NullEmployee");
+                return RedirectToAction("Null");
             }
         }
         // конец действий с сотрудниками
 
 
+
+        // начало действий с офисами (связь многие ко многим)
         [HttpGet]
-        public async Task<IActionResult> adminOffices()
+        public async Task<IActionResult> SameSchedule()
         {
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> SameOffice()
+        {
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> OfficeError()
+        {
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> adminOffices()
+        {
+            var db = new TerramarsContext();
+            var offices = db.Offices.Include(o => o.Schedules).ToList();
+            var schedules = db.Schedules.ToList();
+            var model = new AllModels { Offices = offices, Schedules = schedules };
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> deleteSchedule(Guid Id)
+        {
+            await _scheduleManager.DeleteSchedule(Id);
+            return RedirectToAction("adminOffices");
+        }
+        [HttpGet]
+        public async Task<IActionResult> editSchedule(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var schedule = db.Schedules.FirstOrDefault(s => s.Id == Id);
+            return View(schedule);
+        }
+        [HttpGet]
+        public async Task<IActionResult> detailsOffice(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var office = db.Offices.Include(s => s.Schedules).FirstOrDefault(o => o.Id == Id);
+            return View(office);
+        }
+        [HttpGet]
+        public async Task<IActionResult> editOffice(Guid Id)
+        {
+            var db =new TerramarsContext();
+            var office = db.Offices.Include(s => s.Schedules).FirstOrDefault(o => o.Id == Id);
+            ViewBag.Schedules = db.Schedules.ToList();
+            return View(office);
+        }
+        [HttpGet]
+        public async Task<IActionResult> deleteOffice(Guid Id)
+        {
+            await _officeManager.DeleteOffice(Id);
+            return RedirectToAction("adminOffices");
+        }
+        [HttpPost]
+        public async Task<IActionResult> editOffice(Office office, Guid[] ScheduleId)
+        {
+            if (office.Address != null && office.Phone != null)
+            {
+                await _officeManager.EditOffice(office, ScheduleId);
+                return RedirectToAction("adminOffices");
+            }
+            else
+            {
+                return RedirectToAction("Null");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> createOffice(string officeAddress, string officeDescription, string officePhone, Guid[] ScheduleId)
+        {
+            if(ScheduleId.Length == 0)
+            {
+                return RedirectToAction("OfficeError");
+            }
+            var db = new TerramarsContext();
+            var office = db.Offices.FirstOrDefault(o => o.Address == officeAddress || o.Phone == officePhone);
+            if (office != null)
+            {
+                return RedirectToAction("SameOffice");
+            }
+            else
+            {
+                await _officeManager.CreateOffice(officeAddress, officeDescription, officePhone, ScheduleId);
+                return RedirectToAction("adminOffices");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> editSchedule(Schedule schedule)
+        {
+            if(schedule.Day != null && schedule.Time != null)
+            {
+                await _scheduleManager.EditSchedule(schedule);
+                return RedirectToAction("adminOffices");
+            }
+            else
+            {
+                return RedirectToAction("Null");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> createSchedule(string scheduleDay, string scheduleTime)
+        {
+            var db = new TerramarsContext();
+            var schedule = db.Schedules.FirstOrDefault(s => s.Day == scheduleDay && s.Time == scheduleTime);
+            if(schedule != null)
+            {
+                return RedirectToAction("SameSchedule");
+            }
+            else
+            {
+                await _scheduleManager.CreateSchedule(scheduleDay, scheduleTime);
+                return RedirectToAction("adminOffices");
+            }
+        }
+        // конец действий с офисами
+
+
     }
 }
