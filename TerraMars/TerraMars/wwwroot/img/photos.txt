@@ -1,0 +1,46 @@
+﻿Участки
+1 https://avatars.mds.yandex.net/get-zen_doc/1602847/pub_5ddb86b51d7c9c37ebede703_5ddb8fd88f162361ae09f0f8/scale_1200
+2 https://pbs.twimg.com/media/DkjX0bkWwAAeVTM.jpg:large
+3 https://avatars.mds.yandex.net/get-zen_doc/1875939/pub_61bc3511a5665067c17c27cd_61be180e187a96170de66bcd/scale_1200
+4 https://voloshin.md/wp-content/uploads/2019/03/mars-2030-virtual-reality-4.jpg
+5 https://catherineasquithgallery.com/uploads/posts/2021-02/1612885304_146-p-oranzhevo-krasnii-fon-na-marse-206.jpg
+6 https://24smi.org/public/media/news/2015/10/22/1445515828-rossijskie-uchenye-na-venere-mozhet-byt-_newsya_n.jpg
+7 https://ic.pics.livejournal.com/nata_qimi/87238984/16172/16172_original.jpg
+8 https://upload.wikimedia.org/wikipedia/commons/1/1d/PIA17603_Erosion_by_Scarp_Retreat_in_Gale_Crater.jpg
+9 https://severnymayak.ru/wp-content/uploads/2016/07/1432621908_1.jpg
+10 https://i.ytimg.com/vi/nTAhl1Ud5QY/maxresdefault.jpg
+11 https://www.km.ru/sites/default/files/illustrations/news/2016/11/24/mars620.jpg
+12 https://discover24.ru/wp-content/uploads/2018/07/pia22585_hires.jpg
+13 https://www.ridus.ru/images/2020/9/3/1143960/in_article_99b39f63c9.png
+14 https://cdn.fishki.net/upload/post/2018/05/24/2607011/be5f8715f9762e8f868316e2ee5aa6d0.jpg
+15 https://cp12.nevsepic.com.ua/61/1353761999-0472115-www.nevsepic.com.ua.jpg
+16 https://mobimg.b-cdn.net/v3/fetch/68/6850212bd0e9d59ad64fd9c579b9f48a.jpeg
+17 https://marsanomalies-photos.com/wp-content/uploads/2017/02/Х-05-Копия-марс-765ог7.jpg
+18 https://avatars.mds.yandex.net/get-zen_doc/1889495/pub_60fe36088dd367484fed6999_60fe3a56102b8751762d996c/scale_1200
+19 https://cdn-st1.rtr-vesti.ru/vh/pictures/hd/194/216/8.jpg
+20 https://static.mk.ru/upload/entities/2018/01/19/articles/facebookPicture/40/77/7d/91/84634c085825ec381c34441dc4d74b64.jpg
+
+Сотрудники
+1 Павлов
+https://sun9-57.userapi.com/s/v1/if2/wQoDEKjf-TMKmDurpotvUiPyzg_pZ0D2YEY6sslQd00vJoPBvAwb03WRMhfE6Mz1eyGm6Fd5uKtVnYJ8RkyL5LW-.jpg?size=640x640&quality=96&type=album
+2 Кашуркин 
+https://img.nagradion.ru/images/normal/m/official315251170.jpg
+3 Оксана
+https://sun9-17.userapi.com/s/v1/if2/CypKJBMQJUv5EIV7_m0XUgVOdIzvl8r9nF_PpdqlXPRQdkSHO_8QXNaXV0pqFiRAkR4YbIAgAOWGBVYd2mA905rC.jpg?size=300x300&quality=96&type=album
+4 Я
+https://sun1-98.userapi.com/s/v1/if2/b3ORA4iYyjbZcyDefBgKAkF5aGIToZdBfS3Y3Gyxe3uub5VrifwnzuyKtdgxgXkcoaBdOj5hvz9pOtyh0bdMuaxX.jpg?size=1440x1920&quality=95&type=album
+5 Даня
+https://sun9-24.userapi.com/s/v1/if2/Ilckt9GezbmUyw3kWnFKvWBVp8UbECoiTTx6MZnfCklCfAqfOqCj911L4oGDw2oEqbwSm-yK6F25SZJYlGqAv1uN.jpg?size=810x1080&quality=96&type=album
+6 Билли
+https://sun9-19.userapi.com/s/v1/if2/uqHSDwkDr3QCC_udPBDcjZiCKpOIP4gs7nm4EiQCWkhX7FHeHr_UV35P1SHtYPJ1UsJKkS_aC-QcNDg4e3lIE27G.jpg?size=1200x780&quality=96&type=album
+7 Илон
+https://psv4.userapi.com/c537232/u192603705/docs/d47/4883979cd768/mainproj.jpg?extra=jMiTkLdWhCi6ZdguKzEdPtsOk7Qlgmzfr3cAVw96KiNAQ7JgiUhpn5desI3nPOy_CwOabaKW-xAAtbkRhJKotmhQqyhrz0G0bYhRc_JgpIDAlq6PkxkXyqqsh2fZRgGE0v8KYuibrb7BxDezf90Wb2U
+8 Викуся
+https://sun9-76.userapi.com/s/v1/if2/lmWiyxSgQUlqpwsOLkvTD_cvNyJJFurtKdfyZVbThuR5jDX6ANEwwMErradSnxhsZVrPosBCL2ZKf06PcFuSZjjz.jpg?size=828x734&quality=96&type=album
+9 Анатолик
+https://sun9-87.userapi.com/s/v1/if2/8bkz9pO9UctYyTUYcslHZ70kpsiw6Js_FoVtxVoiYRWkOZbjOxmMQ4mfHIQsalM11N1fvOYS449M_G5aL7sGcPCe.jpg?size=960x1280&quality=96&type=album
+10 Аня
+https://sun9-34.userapi.com/s/v1/if2/EqleB_oM8oPWWhgg0NqqZfLYaaynXZtpLOcP3Myreu1DCYUkrBSMvx5JX-S8TOBXj3_hetOk4SXUU1jKqrEzEWVk.jpg?size=959x1280&quality=95&type=album
+11 Викусик
+https://sun6-23.userapi.com/s/v1/if2/f60p6wJNB1x0DPCrMEzHfSPU2tfprbVvtTyx43cFWmq8jVbyT1TZKvXKNqYjmgexPrXjy2z1IuCshqyg9A75cr83.jpg?size=1080x1080&quality=96&type=album
+

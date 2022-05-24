@@ -66,7 +66,34 @@ $(document).ready(function () {
             prevEl: '.swiper-button-prev',
          },
       });
-   }
+    }
+
+    if ($('section').hasClass("calculate")) {
+        var modal = $('.modal');
+        var modalContainer = $('.modal-container');
+        $('.btn-order').on("click", function (e) {
+            e.preventDefault();
+            modal.addClass('modal_active');
+            containers.css({
+                'filter': 'blur(5px)',
+                'transition': 'all 0.3s'
+            });
+            $('body').css({ 'overflow-y': 'hidden' });
+        });
+        $('.modal-container__close').click(function (e) {
+            e.preventDefault();
+            modal.removeClass('modal_active');
+            containers.css({ 'filter': 'none' });
+            $('body').css({ 'overflow-y': 'scroll' });
+        });
+        modal.click(function (e) {
+            if (e.target == this && e.target != modalContainer) {
+                modal.removeClass('modal_active');
+                containers.css({ 'filter': 'none' });
+                $('body').css({ 'overflow-y': 'scroll' });
+            }
+        });
+    }
    
    $(window).scroll(function(e){
       e.preventDefault();
