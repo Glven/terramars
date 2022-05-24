@@ -1721,6 +1721,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20rem 0;
 }
 .cart-card {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1728,6 +1729,16 @@ h1, h2, h3, h4, h5, h6 {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 2rem;
+}
+.cart-card a{
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 100%;
+    font-size: 16px;
+    font-family: 'Futura Demi', sans-serif;
+    color: #EA003D;
+    transform: translate(50%, -50%);
 }
 .cart-card .table {
   display: -webkit-box;

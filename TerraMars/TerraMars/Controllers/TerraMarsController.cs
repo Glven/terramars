@@ -22,7 +22,9 @@ namespace TerraMars.Controllers
         private readonly ICart _cartManager;
         private readonly ILogin _loginManager;
         private readonly IReview _reviewManager;
-        public TerraMarsController(IFeedback feedbackManager, IUser userManager, IFavorite favManager, ICart cartManager, ILogin loginManager, IReview reviewManager)
+        private readonly ICompleted _completedManager;
+        private readonly IRegion _regionManager;
+        public TerraMarsController(IFeedback feedbackManager, IUser userManager, IFavorite favManager, ICart cartManager, ILogin loginManager, IReview reviewManager, ICompleted completedManager, IRegion regionManager)
         {
             _feedbackManager = feedbackManager;
             _userManager = userManager;
@@ -30,6 +32,8 @@ namespace TerraMars.Controllers
             _cartManager = cartManager;
             _loginManager = loginManager;
             _reviewManager = reviewManager;
+            _completedManager = completedManager;
+            _regionManager = regionManager;
         }
         [HttpGet]
         public async Task<IActionResult> NullUser()
@@ -52,6 +56,11 @@ namespace TerraMars.Controllers
             return View();
         }
         [HttpGet]
+        public async Task<IActionResult> SameCart()
+        {
+            return View();
+        }
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var db = new TerramarsContext();
@@ -64,7 +73,8 @@ namespace TerraMars.Controllers
                 UserId = Guid.Parse(idUser);
             }
             var user = db.Users.FirstOrDefault(u => u.Id == UserId);
-            var model = new AllModels { user = user };
+            var completed = db.Completeds.ToList();
+            var model = new AllModels { user = user, Completeds = completed };
             return View(model);
         }
         [HttpPost]
@@ -288,6 +298,12 @@ namespace TerraMars.Controllers
             }
         }
         [HttpGet]
+        public async Task<IActionResult> deleteCart(Guid Id)
+        {
+            await _cartManager.DeleteCart(Id);
+            return RedirectToAction("Cart");
+        }
+        [HttpGet]
         public async Task<IActionResult> SameUser()
         {
             return View();
@@ -347,6 +363,18 @@ namespace TerraMars.Controllers
             };
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public async Task<IActionResult> Buy()
+        {
+            var db = new TerramarsContext();
+            var carts = db.Carts.Include(c => c.Region).ToList();
+            foreach(var cart in carts)
+            {
+                await _completedManager.CreateCompleted(cart.Region.Photo, cart.Region.Name, cart.Region.Square, cart.Region.Price);
+                await _regionManager.DeleteRegion(cart.Region.Id);
+            }
             return RedirectToAction("Index");
         }
 

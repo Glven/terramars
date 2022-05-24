@@ -19,11 +19,12 @@
             <p class="cart-card__elem cart-card__name">@c.Region.Name</p>
             <p class="cart-card__elem cart-card__square">@c.Region.Square км</p>
             <span class="cart-card__elem cart-card__price">@c.Region.Price</span>
+            <a href="deleteCart/@c.Id">Удалить</a>
         </div>
        }
         </div>
         <!-- /.cart-wrapper -->
-        <a href="#" class="btn btn-primary cart-btn">Купить</a>
+        <a asp-action="Buy" asp-controller="TerraMars" class="btn btn-primary cart-btn">Купить</a>
     </div>
     <!-- /.container -->
 </section>

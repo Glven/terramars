@@ -10,7 +10,7 @@ using TerraMars.Data;
 namespace TerraMars.Migrations
 {
     [DbContext(typeof(TerramarsContext))]
-    [Migration("20220523233108_InitialCreate")]
+    [Migration("20220524020232_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,6 +59,29 @@ namespace TerraMars.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("TerraMars.Data.Entities.Completed", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("regionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("regionPhoto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("regionPrice")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("regionSquare")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Completeds");
                 });
 
             modelBuilder.Entity("TerraMars.Data.Entities.Employee", b =>

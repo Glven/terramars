@@ -40,6 +40,7 @@ namespace TerraMars
             services.AddTransient<ICart, CartsRepository>();
             services.AddTransient<IReview, ReviewsRepository>();
             services.AddTransient<ILogin, LoginRepository>();
+            services.AddTransient<ICompleted, CompletedsRepository>();
             services.AddMvc();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
             services.AddControllersWithViews()

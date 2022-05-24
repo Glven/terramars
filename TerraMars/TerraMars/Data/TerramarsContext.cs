@@ -21,6 +21,7 @@ namespace TerraMars.Data
         public DbSet<Service> Services { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Completed> Completeds { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=TerramarsContext;Trusted_Connection=True;MultipleActiveResultSets=true;");

@@ -8,6 +8,21 @@ namespace TerraMars.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Completeds",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    regionPhoto = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    regionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    regionSquare = table.Column<long>(type: "bigint", nullable: false),
+                    regionPrice = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Completeds", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
@@ -243,6 +258,9 @@ namespace TerraMars.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Carts");
+
+            migrationBuilder.DropTable(
+                name: "Completeds");
 
             migrationBuilder.DropTable(
                 name: "Employees");

@@ -2,6 +2,7 @@
     Layout = "_Layout";
     ViewBag.Title = "TerraMars - Главная";
 }
+@model AllModels
 <section class="section hero" id="hero">
       <div class="hero-scene">
          <div data-speed="20" class="hero-layer hero-layer-bg"></div>
@@ -34,78 +35,23 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper swiper-no-swiping">
                     <!-- Slides -->
-                    <div class="swiper-slide">
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Координаты</h3>
-                        <p class="swiper-slide__desc">45,55656 65,235</p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Площадь</h3>
-                        <p class="swiper-slide__desc">81<span class="meter">м</span> </p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Срок покупки</h3>
-                        <p class="swiper-slide__desc"><span class="swiper-slide__year">5</span> лет</p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Стоимость</h3>
-                        <p class="swiper-slide__desc"><span class="swiper-slide__cost">1000000</span>$</p>
-                    </div>
-                    </div>
-                    <div class="swiper-slide">
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Координаты</h3>
-                        <p class="swiper-slide__desc">45,55656 65,235</p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Площадь</h3>
-                        <p class="swiper-slide__desc">81<span class="meter">м</span> </p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Срок покупки</h3>
-                        <p class="swiper-slide__desc"><span class="swiper-slide__year">5</span> лет</p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Стоимость</h3>
-                        <p class="swiper-slide__desc"><span class="swiper-slide__cost">1000000</span>$</p>
-                    </div>
-                    </div>
-                    <div class="swiper-slide">
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Координаты</h3>
-                        <p class="swiper-slide__desc">45,55656 65,235</p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Площадь</h3>
-                        <p class="swiper-slide__desc">81<span class="meter">м</span> </p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Срок покупки</h3>
-                        <p class="swiper-slide__desc"><span class="swiper-slide__year">5</span> лет</p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Стоимость</h3>
-                        <p class="swiper-slide__desc"><span class="swiper-slide__cost">1000000</span>$</p>
-                    </div>
-                    </div>
-                    <div class="swiper-slide">
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Координаты</h3>
-                        <p class="swiper-slide__desc">45,55656 65,235</p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Площадь</h3>
-                        <p class="swiper-slide__desc">81<span class="meter">м</span> </p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Срок покупки</h3>
-                        <p class="swiper-slide__desc"><span class="swiper-slide__year">5</span> лет</p>
-                    </div>
-                    <div class="swiper-slide__info">
-                        <h3 class="swiper-slide__title">Стоимость</h3>
-                        <p class="swiper-slide__desc"><span class="swiper-slide__cost">1000000</span>$</p>
-                    </div>
-                    </div>
+                        @foreach (var c in Model.Completeds)
+                       {
+                           <div class="swiper-slide">
+                            <div class="swiper-slide__info">
+                                <h3 class="swiper-slide__title">Имя участка</h3>
+                                <p class="swiper-slide__desc">@c.regionName</p>
+                            </div>
+                            <div class="swiper-slide__info">
+                                <h3 class="swiper-slide__title">Площадь участка</h3>
+                                <p class="swiper-slide__desc">@c.regionSquare<span class="meter">км</span> </p>
+                            </div>
+                            <div class="swiper-slide__info">
+                                <h3 class="swiper-slide__title">Стоимость</h3>
+                                <p class="swiper-slide__desc"><span class="swiper-slide__cost">@c.regionPrice</span>$</p>
+                            </div>
+                        </div>
+                       }
                     </div>
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
@@ -122,18 +68,12 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper swiper-no-swiping">
                     <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="finished-img"><img src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG" alt="img"></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="finished-img"><img src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/rcam/RLB_486265291EDR_F0481570RHAZ00323M_.JPG" alt="img"></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="finished-img"><img src="http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR0044631130503673E01_DXXX.jpg" alt="img"></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="finished-img"><img src="http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000ML0044631250305222E03_DXXX.jpg" alt="img"></div>
-                    </div>
+                        @foreach (var c in Model.Completeds)
+                       {
+                         <div class="swiper-slide">
+                            <div class="finished-img"><img src="@c.regionPhoto" alt="img"></div>
+                        </div>
+                       }
                     </div>
                 </div>
             </div>
