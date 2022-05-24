@@ -20,5 +20,6 @@ namespace TerraMars.Models
         public IEnumerable<Schedule> Schedules { get; set; }
         public IEnumerable<User> Users { get; set; }
         public IEnumerable<Review> Reviews { get; set; }
+        public User user { get; set; }
     }
 }

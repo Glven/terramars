@@ -125,3 +125,7 @@ D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SameO
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\editOffice.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Null.cshtml.g.cs
 D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\SameFav.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\Admin\detailsReview.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\NotFoundUser.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\NullUser.cshtml.g.cs
+D:\terramars\TerraMars\TerraMars\obj\Debug\netcoreapp3.1\Razor\Views\TerraMars\SameReview.cshtml.g.cs

@@ -10,7 +10,7 @@ using TerraMars.Data;
 namespace TerraMars.Migrations
 {
     [DbContext(typeof(TerramarsContext))]
-    [Migration("20220522234342_InitialCreate")]
+    [Migration("20220523233108_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -188,8 +188,8 @@ namespace TerraMars.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Grade")
-                        .HasColumnType("float");
+                    b.Property<int>("Grade")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Time")
                         .HasColumnType("datetime2");

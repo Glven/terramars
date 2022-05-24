@@ -798,6 +798,14 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   height: 102px;
 }
+.header-drop__logTrue span{
+    display: block;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Futura Demi', sans-serif;
+    text-align: center;
+    font-size: 24px;
+}
 .header-drop__log {
   border: 2px solid #2da44e;
   background: #2da44e;

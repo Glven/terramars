@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model AllModels
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     @await Html.PartialAsync("MetatagsPartial")
@@ -39,18 +40,6 @@
                         <a asp-action="Offices" asp-controller="TerraMars" class="header-menu__link">Офисы</a>
                      </div>
                      <!-- /.header-menu -->
-                     <div class="header-search">
-                        <form action="search" class="header-search__form">
-                           <input type="search" placeholder="Искать...">
-                           <button type="submit">
-                              <i class="fa fa-search" aria-hidden="true"></i>
-                           </button>
-                        </form>
-                        <div class="header-search__icon">
-                           <i class="fa fa-search" aria-hidden="true"></i>
-                        </div>
-                     </div>
-                     <!-- /.header-search -->
                   </div> 
                </div>
 
@@ -68,11 +57,21 @@
                            <i class="fa fa-star" aria-hidden="true"></i>
                            Избранное
                         </a>
-                        <div class="header-drop__buttons">
-                           <a asp-action="Login" asp-controller="TerraMars" class="btn header-drop__log">Вход</a>
-                           <a asp-action="Signin" asp-controller="TerraMars" class="btn header-drop__reg">Регистрация</a>
-                        </div>
-                     </div>
+                        @if(Model.user == null)
+                        {
+                            <div class="header-drop__buttons">
+                                <a asp-action="Login" asp-controller="TerraMars" class="btn header-drop__log">Вход</a>
+                                <a asp-action="Signin" asp-controller="TerraMars" class="btn header-drop__reg">Регистрация</a>
+                            </div>
+                        }
+                        else
+                        {
+                             <div class="header-drop__logTrue">
+                                 <span>@Html.DisplayTextFor(m => m.user.Lastname) @Html.DisplayTextFor(m => m.user.Name)</span>
+								 <a asp-action="Logout" asp-controller="TerraMars" class="btn btn-tran">Выход</a>
+                             </div>       
+                        }
+                    </div>
                   </div>
                   <div class="header-hiddenmenu">
                      <div class="header-hiddenmenu__btn">

@@ -7,10 +7,8 @@ using TerraMars.Data.Entities;
 
 namespace TerraMars.Models.Interfaces
 {
-	public interface IReview
-	{
-		Task<IList<Review>> GetReviews();
-		Task CreateReview(Guid UserId, int reviewGrade, string reviewComment);
-		Task DeleteReview(Guid ReviewId);
-	}
+    public interface ILogin
+    {
+        User userReturn(string userLogin, string userPassword);
+    }
 }

@@ -281,7 +281,7 @@
         </div>
         <!-- /.container -->
         </div>
-        <a href="#" class="btn btn-primary team-more">Показать всех</a>
+        <a asp-action="Employees" asp-controller="TerraMars" class="btn btn-primary team-more">Показать всех</a>
         <!-- /.team-wrapper -->
     </div>
     <!-- /.container -->
@@ -296,24 +296,24 @@
     <div class="container">
         <div class="contact-formContainer">
         <h2 class="contact-formContainer__title text--light">Остались вопросы?</h2>
-        <form action="POST" class="contact-form">
+        <form method="post" asp-action="Index" asp-controller="TerraMars" class="contact-form">
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <div class="form-group">
                     <label for="name">Имя</label>
-                    <input type="name" id="name" class="input input-primary" placeholder="Введите имя *" required>
+                    <input type="text" name="guestName" id="name" class="input input-primary" placeholder="Введите имя *" required>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="form-group">
                     <label for="phone">Телефон</label>
-                    <input type="phone" id="phone" class="input input-primary" placeholder="Введите телефон *" required>
+                    <input type="text" name="guestPhone" id="phone" class="input input-primary" placeholder="Введите телефон *" required>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-group">
                     <label for="message">Сообщение</label>
-                    <textarea name="message" id="message" placeholder="Введите интересующий вас вопрос" class="textarea textarea-primary"></textarea>
+                    <textarea name="guestMessage" id="message" placeholder="Введите интересующий вас вопрос" class="textarea textarea-primary"></textarea>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Hosting;
 using TerraMars.Data;
 using TerraMars.Data.Repositories;
@@ -37,7 +38,10 @@ namespace TerraMars
             services.AddTransient<IOffice, OfficesRepository>();
             services.AddTransient<IFavorite, FavoritesRepository>();
             services.AddTransient<ICart, CartsRepository>();
+            services.AddTransient<IReview, ReviewsRepository>();
+            services.AddTransient<ILogin, LoginRepository>();
             services.AddMvc();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
             services.AddControllersWithViews()
                 // вставляем совместимость с asd.net core 3.0
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
@@ -52,6 +56,10 @@ namespace TerraMars
             }
 
             app.UseRouting();
+
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseStaticFiles();
 

@@ -2,49 +2,37 @@
     Layout = "_Layout";
     ViewBag.Title = "Отзывы";
 }
+@model AllModels
 <section class="section section--dark reviews">
     <div class="container">
         <h1 class="reviews-title">Отзывы</h1>
-        <form class="reviews-form" method="post">
-        <div class="form-group">
-            <input type="number" name="grade" min="1" max="5" step="0.1" placeholder="Оценка">
-        </div>
-        <textarea name="comment" placeholder="Ваш комментарий"></textarea>
-        <input type="submit" value="Опубликовать" class="btn btn-primary">
-        </form>
+            <form class="reviews-form" method="post" asp-action="createReview" asp-controller="TerraMars"> 
+            <div class="form-group">
+                <input type="number" name="reviewGrade" min="1" max="5" step="1" placeholder="Оценка">
+            </div>
+            <textarea name="reviewComment" placeholder="Ваш комментарий"></textarea>
+            <input type="submit" value="Опубликовать" class="btn btn-primary">
+            </form>
         <div class="reviews-wrapper">
-        <div class="reviews-card">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6">
-                    <h2 class="reviews-card__name">Оганесян Тигран</h2>
-            </div>
-                <div class="col-12 col-md-6">
-                    <span class="reviews-card__date">13.05.2022 23:12</span>
+            @foreach (var r in Model.Reviews)
+            {
+            <div class="reviews-card">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <h2 class="reviews-card__name">@r.User.Lastname @r.User.Name</h2>
                 </div>
-                <div class="col-12">
-                    <p class="reviews-card__grade"> Оценка: <span>4.5</span> / 5</p>
-                </div>
-                <div class="col-12">
-                    <p class="reviews-card__comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sapiente odit perspiciatis quaerat tenetur saepe dolorem laborum aut ab adipisci veniam voluptatem non dolor deserunt sequi laboriosam, iure sed. Nobis?</p>
-                </div>
-            </div>
-        </div>
-        <div class="reviews-card">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6">
-                    <h2 class="reviews-card__name">Павлов Василий</h2>
-            </div>
-                <div class="col-12 col-md-6">
-                    <span class="reviews-card__date">14.05.2022 06:45</span>
-                </div>
-                <div class="col-12">
-                    <p class="reviews-card__grade"> Оценка: <span>4.7</span> / 5</p>
-                </div>
-                <div class="col-12">
-                    <p class="reviews-card__comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sapiente odit perspiciatis quaerat tenetur saepe dolorem laborum aut ab adipisci veniam voluptatem non dolor deserunt sequi laboriosam, iure sed. Nobis?</p>
+                    <div class="col-12 col-md-6">
+                        <span class="reviews-card__date">@r.Time</span>
+                    </div>
+                    <div class="col-12">
+                        <p class="reviews-card__grade"> Оценка: <span>@r.Grade</span> / 5</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="reviews-card__comment">@r.Comment</p>
+                    </div>
                 </div>
             </div>
-        </div>
+            }
         </div>
         <!-- /.reviews-wrapper -->
     </div>

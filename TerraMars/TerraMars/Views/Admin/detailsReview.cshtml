@@ -1,0 +1,11 @@
+﻿@{
+	Layout = "_Admin";
+}
+@model TerraMars.Data.Entities.Review
+<div class="details section--dark">
+	<div class="container">
+	<h2>Имя пользователя: @Html.DisplayTextFor(m => m.User.Lastname) @Html.DisplayTextFor(m => m.User.Name)</h2>
+	<h3>Оценка: @Html.DisplayTextFor(m => m.Grade)</h3>
+	<p style="color: #fff; font-size: 14px;">@Html.DisplayTextFor(m => m.Comment)</p>
+</div>
+</div>

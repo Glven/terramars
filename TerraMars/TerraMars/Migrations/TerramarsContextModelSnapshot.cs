@@ -186,8 +186,8 @@ namespace TerraMars.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Grade")
-                        .HasColumnType("float");
+                    b.Property<int>("Grade")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Time")
                         .HasColumnType("datetime2");

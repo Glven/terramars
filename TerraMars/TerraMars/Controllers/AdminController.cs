@@ -20,7 +20,8 @@ namespace TerraMars.Controllers
         private readonly IRegion _regionManager;
         private readonly ISchedule _scheduleManager;
         private readonly IOffice _officeManager;
-        public AdminController(IEmployee employeeManager, IService serviceManager, INew newManager, IFeedback feedbackManager, IUser userManager, IRegion regionManager, ISchedule scheduleManager, IOffice officeManager)
+        private readonly IReview _reviewManager;
+        public AdminController(IEmployee employeeManager, IService serviceManager, INew newManager, IFeedback feedbackManager, IUser userManager, IRegion regionManager, ISchedule scheduleManager, IOffice officeManager, IReview reviewManager)
         {
             _employeeManager = employeeManager;
             _serviceManager = serviceManager;
@@ -30,6 +31,7 @@ namespace TerraMars.Controllers
             _regionManager = regionManager;
             _scheduleManager = scheduleManager;
             _officeManager = officeManager;
+            _reviewManager = reviewManager;
         }
 
         [HttpGet]
@@ -253,11 +255,31 @@ namespace TerraMars.Controllers
         // конец действий с новостями
         
 
+        // начало действий с отзывами
         [HttpGet]
         public async Task<IActionResult> adminReviews()
         {
-            return View();
+            var db = new TerramarsContext();
+            var reviews = db.Reviews.ToList();
+            var users = db.Users.ToList();
+            var model = new AllModels { Users = users, Reviews = reviews };
+            return View(model);
         }
+        [HttpGet]
+        public async Task<IActionResult> deleteReview(Guid Id)
+        {
+            await _reviewManager.DeleteReview(Id);
+            return RedirectToAction("adminReviews");
+        }
+        [HttpGet]
+        public async Task<IActionResult> detailsReview(Guid Id)
+        {
+            var db = new TerramarsContext();
+            var review = db.Reviews.Include(u => u.User).FirstOrDefault(r => r.Id == Id);
+            return View(review);
+        }
+        // конец действий с отзвами
+
 
 
         // начало действий с заявками

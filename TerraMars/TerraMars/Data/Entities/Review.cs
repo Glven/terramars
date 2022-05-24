@@ -14,7 +14,7 @@ namespace TerraMars.Data.Entities
 		[ForeignKey("User")]
 		public Guid Id { get; set; }
 		public DateTime Time { get; set; }
-		public double Grade { get; set; }
+		public int Grade { get; set; }
 		public string Comment { get; set; }
 		public User User { get; set; }
 	}

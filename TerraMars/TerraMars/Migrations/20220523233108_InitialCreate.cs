@@ -214,7 +214,7 @@ namespace TerraMars.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Time = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Grade = table.Column<double>(type: "float", nullable: false),
+                    Grade = table.Column<int>(type: "int", nullable: false),
                     Comment = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
